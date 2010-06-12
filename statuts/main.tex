@@ -10,21 +10,19 @@
 \usepackage{shadow}
 \usepackage{fancyhdr} 
 \usepackage{fancybox}
-
 \usepackage[colorlinks=true,urlcolor=black,pdfauthor={Association
   META},pdftitle={Statuts de l'assocation
-  META},pdfsubject={Association META : Improvisation Théatrâle, Basée
-  à Paris},pdfkeywords={META, improvisation, impro, théatre,
+  META},pdfsubject={Association META : Improvisation Théâtrale, Basée
+  à Paris},pdfkeywords={META, improvisation, impro, théâtre,
   spectacle, paris, association loi 1901, statuts }]{hyperref}
 
 
 \renewcommand{\headrulewidth}{0.4pt} %Trait haut
 \renewcommand{\footrulewidth}{0pt} %Trait bas
-
+\newcommand{\article}[1]{\subsection{#1}\addtocounter{article}{1}}
 \newcommand{\meta}{\textbf{META}}
 
 \title{Statuts de l'association \meta{}}
-
 \begin{document}
 
 \date{}
@@ -47,16 +45,18 @@
 \newcounter{article}
 \setcounter{article}{1}
 \def\thesection       {Titre \Roman{section}}
-\def\thesubsection       {Article \arabic{article}\addtocounter{article}{1}}
+\def\thesubsection       {Article \arabic{article}}
+%\let\subsection[1]{\addtocounter{article}{1}\subsection{#1}}
+
+%\let\subsection{\subsection\addtocounter{article}{1}}
 
 \section{Présentation de l’association}
-
-\subsection{Constitution et dénomination}
+\article{Constitution et dénomination}
 \label{sec:constitution}
 Il est fondé entre les adhérents aux présents statuts une association
 régie par la Loi 1901, ayant pour dénomination \textit{\meta{} Est une Troupe Associative}, ci-après désignée par \textit{\meta{}} ou par \textit{l'association}.
 
-\subsection{But}
+\article{But}
 \label{sec:but}
 
 Cette association a pour but :
@@ -66,14 +66,14 @@ Cette association a pour but :
 \item la réflexion autour de l'improvisation.
 \end{itemize}
 
-\subsection{Siège social}
+\article{Siège social}
 \label{sec:siege}
 
 Le siège social est fixé à l'adresse du président de l'association. Il
 pourra être transféré par simple décision de la collectivité des
 membres.
 
-\subsection{Moyens d’action}
+\article{Moyens d’action}
 \label{sec:moyens}
 
 Les moyens d’action de l’association sont notamment:
@@ -87,13 +87,13 @@ services entrant dans le cadre de son objet ou susceptible de
 contribuer à sa réalisation.
 \end{itemize}
 
-\subsection{Durée de l’association}
+\article{Durée de l’association}
 \label{sec:duree}
 La durée de l’association est illimitée.
 
 \section{Composition de l’association}
 
-\subsection{Composition de l’association}
+\article{Composition de l’association}
 \label{sec:composition}
 L’association se compose de membres d'honneur, de membres bienfaiteurs
 et de membres adhérents.
@@ -111,13 +111,13 @@ Les membres adhérents personnes physiques ou morales acquittent une
 cotisation fixée annuellement par le règlement intérieur. Ils sont
 membres de l'Assemblée Générale avec voix délibérative.
 
-\subsection{Admission et adhésion}
+\article{Admission et adhésion}
 \label{sec:admission}
 Pour faire partie de l’association, il faut être agréé par le bureau
 qui statue, selon les modalités prévues par le règlement intérieur, sur les demandes d'admission présentées. Il faut alors adhérer aux présents
 statuts et au règlement intérieur et s’acquitter de la cotisation dont le montant est fixé par ce dernier.
 
-\subsection{Perte de la qualité de membre}
+\article{Perte de la qualité de membre}
 \label{sec:perte}
 La qualité de membre se perd par :
 \begin{itemize}
@@ -132,7 +132,7 @@ grave.
 \end{itemize}
 
 
-\subsection{Responsabilité des membres}
+\article{Responsabilité des membres}
 \label{sec:responsabilite}
 Aucun des membres de l’association n’est personnellement responsable
 des engagements contractés par elle. Seul le patrimoine de
@@ -141,10 +141,10 @@ l’association répond de ses engagements.
 
 \section{Organisation et fonctionnement}
 
-\subsection{Moyen de correspondance}
+\article{Moyen de correspondance}
 Les adhérents peuvent adresser leur correspondance écrite par lettre signée. Alternativement, l'adhérent peut choisir un moyen de communication sécurisé précisé dans le règlement intérieur. Les moyens précisés dans le règlement intérieur devront être conformes à la loi 2000-230 du 13 mars 2000 portant adaptation du droit de la preuve aux technologies de l'information et relative à la signature numérique, ils devront suivre les dispositions décrites dans le décret d'application 2001-272 du 30 mars 2001. 
 
-\subsection{Décisions collectives des membres}
+\article{Décisions collectives des membres}
 \label{sec:decisions-collectives}
 
 Les décisions collectives des membres sont prises, soit en assemblée
@@ -166,7 +166,7 @@ La conclusion d’un emprunt bancaire ou d’un contrat de travail par
 l’association ne peut résulter que d’une décision collective des
 membres.
 
-\subsection{Assemblée Générale Ordinaire}
+\article{Assemblée Générale Ordinaire}
 \label{sec:ago}
 L’Assemblée Générale ordinaire se réunit au moins une fois par an et
 comprend tous les membres de l’association à jour de leur cotisation.
@@ -190,14 +190,14 @@ fixe aussi le montant de la cotisation annuelle, autorise les emprunts
 bancaires et la conclusion de contrats de travail.
 
 
-\subsection{Assemblée Générale Extraordinaire}
+\article{Assemblée Générale Extraordinaire}
 \label{sec:age}
 
 Sur demande d'au moins la moitié des membres inscrits ou de sa propre
 initiative, le bureau % le président ?
 peut convoquer une assemblée générale extraordinaire.
 
-\subsection{Modalités communes aux Assemblée Générale Ordinaire et Extraordinaires}
+\article{Modalités communes aux Assemblée Générale Ordinaire et Extraordinaires}
 \label{sec:ag}
 L'ordre du jour est établi par le bureau. % ou le président ?
 % Seuls les points à l'ordre du jour peuvent être votés
@@ -227,7 +227,7 @@ bénéficient du droit de vote et sont éligibles.
 
 
 
-\subsection{Bureau}
+\article{Bureau}
 \label{sec:bureau}
 L’assemblée générale désigne, parmi les membres, au scrutin secret, un
 bureau composé de :
@@ -241,7 +241,7 @@ bureau composé de :
 
 Le bureau prépare les réunions des membres. Il exécute les décisions de l’assemblée et traite les affaires courantes de l’association.
 
-\subsection{Pouvoir du Bureau}
+\article{Pouvoir du Bureau}
 \label{sec:pouvoirs}
 Le bureau est investi des pouvoirs les plus étendus dans les limites
 de l’objet de l’association et dans le cadre des résolutions adoptées
@@ -263,24 +263,24 @@ Il est chargé :
 \end{itemize}
 
 
-\subsection{Rémunération}
+\article{Rémunération}
 \label{sec:remuneration}
 Les fonctions de membres du bureau sont bénévoles ; seuls les frais et
 débours occasionnés pour l’accomplissement du mandat social sont
 remboursés au vu des pièces justificatives.
 
-\subsection{La Troupe}
+\article{La Troupe}
 \label{sec:troupe}
-Un collège de membres appelé \og{} La Troupe\fg{} est chargé de l'organisation des spectacles de l'association. Les représentations de ces spectacles sont données par La Troupe. Le fonctionnement de ce collège est fixé par le règlement intérieur.
+Un collège de membres appelé \og{}La Troupe\fg{} est chargé de l'organisation des spectacles de l'association. Les représentations de ces spectacles sont données par La Troupe. Le fonctionnement de ce collège est fixé par le règlement intérieur.
 
-\subsection{Décisions extraordinaires}
+\article{Décisions extraordinaires}
 \label{sec:decisions-extra}
 Les décisions collectives des membres portant sur la dissolution de
 l’association, la modification des statuts, la conclusion d’un emprunt
 bancaire ou d’un contrat de travail par l’association requièrent
 l’unanimité des membres.
 
-\subsection{Règlement intérieur}
+\article{Règlement intérieur}
 \label{sec:reglement}
 Un règlement intérieur est établi par le bureau qui le fait approuver
 par l’Assemblée Générale.
@@ -289,21 +289,17 @@ Il régit entre autre le montant des cotisations des adhérents, les règles d'e
 
 % O:Formulation à revoir/compléter
 
-\section{Orientation artistique et réflexion autour de
-  l'improvisation}
-
-\subsection{Organisation de réflexions}
+\section{Orientation artistique et réflexion autour de l'improvisation}
+\article{Organisation de réflexions}
 \label{sec:reflexions}
 L'association organisera au moins une fois par an une réflexion autour
 de l'improvisation (conférence, table ronde, Assemblée Générale, ou
 tout autre moyen que l'association jugera bon d'employer).
 
 
-\subsection{Projet artistique}
+\article{Projet artistique}
 \label{sec:projet}
-Suite à la réflexion menée suivant les conditions de l'\ref{sec:reflexions}, le
-bureau définira les orientations artistiques pour la Troupe. Il confiera l'établissement et la réalisation d'un projet artistique suivant ces orientations au Directeur Artisitique de la Troupe. Ce projet devra comprendre au moins un
-format de spectacle d'improvisation innovant et original.
+Suite à la réflexion menée suivant les conditions de l'\ref{sec:reflexions}, le bureau définira les orientations artistiques pour la Troupe. Il confiera l'établissement et la réalisation d'un projet artistique suivant ces orientations au directeur artistique de la Troupe. Ce projet devra comprendre au moins un format de spectacle d'improvisation innovant et original.
 
 % Reply Edit May 30 Cyril:
 % Donc, si je comprends bien, cela revient à dire que l'on doit produire
@@ -333,7 +329,7 @@ format de spectacle d'improvisation innovant et original.
 % de la discussions lors de l'AG.
 
 
-\subsection{Dépôt et diffusion des formats}
+\article{Dépôt et diffusion des formats}
 \label{sec:depot-et-diffusion}
 Les nouveaux formats créés dans le projet artistique (voir
 \ref{sec:reflexions}) seront déposés sous licence libre précisé par le règlement intérieur. Ils seront diffusés sur Internet et tout autre moyen jugé approprié par l'Assemblée Générale.
@@ -361,13 +357,13 @@ Les nouveaux formats créés dans le projet artistique (voir
 
 \section{Ressources de l’association}
 
-\subsection{Ressources de l’association}
+\article{Ressources de l’association}
 \label{sec:ressources}
 Les ressources de l’association se composent :
 \begin{itemize}
 \item des cotisations ;
   
-\item des subventions de l’état, des collectivités territoriales et
+\item des subventions de l’État, des collectivités territoriales et
 des établissements publics ;
 
 \item du produit des manifestations qu’elle organise ;
@@ -388,7 +384,7 @@ privés.
 
 \section{Dissolution de l’association}
 
-\subsection{Dissolution}
+\article{Dissolution}
 \label{sec:dissolution}
 La dissolution est prononcée par l'Assemblée Générale Ordinaire ou
 Extraordinaire. Elle doit être approuvée par au moins deux tiers des
