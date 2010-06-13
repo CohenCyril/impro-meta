@@ -17,11 +17,35 @@
   spectacle, paris, association loi 1901, statuts }]{hyperref}
 
 
+\usepackage{fancyheadings}
+\pagestyle{fancyplain}
+% Remember chapter title
+
+
 \renewcommand{\headrulewidth}{0.4pt} %Trait haut
 \renewcommand{\footrulewidth}{0pt} %Trait bas
 \newcommand{\article}[1]{\subsection{#1}\addtocounter{article}{1}}
 \newcommand{\meta}{\textbf{META}}
+\newcounter{article}
+\def\thesection       {\Roman{section}}
+\def\thesubsection       {\arabic{article}}
 
+%\makeatletter
+%\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname\quad}
+%\makeatother
+%
+
+\makeatletter
+\newcommand{\sfranky@subsection}{\thesubsection}
+\newcommand{\sfranky@section}{\thesection}
+\def\@seccntformat#1{\@ifundefined{#1@cntformat}%
+{\csname the#1\endcsname\quad}% default
+{\csname #1@cntformat\endcsname}% individual control
+}
+\def\section@cntformat{Titre \thesection\quad}
+\def\subsection@cntformat{Article \thesubsection\quad}
+\makeatother
+\newcommand{\artref}[1]{article \ref{#1}}
 \title{Statuts de l'association \meta{}}
 \begin{document}
 
@@ -42,14 +66,7 @@
 %Bas droite \lfoot{}
 
 
-\newcounter{article}
 \setcounter{article}{1}
-\def\thesection       {Titre \Roman{section}}
-\def\thesubsection       {Article \arabic{article}}
-%\let\subsection[1]{\addtocounter{article}{1}\subsection{#1}}
-
-%\let\subsection{\subsection\addtocounter{article}{1}}
-
 \section{Présentation de l’association}
 \article{Constitution et dénomination}
 \label{sec:constitution}
@@ -151,7 +168,7 @@ Les décisions collectives des membres sont prises, soit en assemblée
 générale annuelle, soit par voie de consultation écrite. Elles peuvent
 encore résulter du consentement de tous les membres exprimé dans un
 acte authentique ou sous seing privé. Sous réserve des dispositions de
-l’\ref{sec:ago}, tout membre de l’association peut soumettre à la
+l’\artref{sec:ago}, tout membre de l’association peut soumettre à la
 collectivité un projet de décision collective.
 
 En cas de consultation écrite, le bureau envoie à chaque membre le
@@ -299,7 +316,7 @@ tout autre moyen que l'association jugera bon d'employer).
 
 \article{Projet artistique}
 \label{sec:projet}
-Suite à la réflexion menée suivant les conditions de l'\ref{sec:reflexions}, le bureau définira les orientations artistiques pour la Troupe. Il confiera l'établissement et la réalisation d'un projet artistique suivant ces orientations au directeur artistique de la Troupe. Ce projet devra comprendre au moins un format de spectacle d'improvisation innovant et original.
+Suite à la réflexion menée suivant les conditions de l'\artref{sec:reflexions}, le bureau définira les orientations artistiques pour la Troupe. Il confiera l'établissement et la réalisation d'un projet artistique suivant ces orientations au directeur artistique de la Troupe. Ce projet devra comprendre au moins un format de spectacle d'improvisation innovant et original.
 
 % Reply Edit May 30 Cyril:
 % Donc, si je comprends bien, cela revient à dire que l'on doit produire
@@ -332,7 +349,7 @@ Suite à la réflexion menée suivant les conditions de l'\ref{sec:reflexions}, 
 \article{Dépôt et diffusion des formats}
 \label{sec:depot-et-diffusion}
 Les nouveaux formats créés dans le projet artistique (voir
-\ref{sec:reflexions}) seront déposés sous licence libre précisé par le règlement intérieur. Ils seront diffusés sur Internet et tout autre moyen jugé approprié par l'Assemblée Générale.
+\artref{sec:reflexions}) seront déposés sous licence libre précisé par le règlement intérieur. Ils seront diffusés sur Internet et tout autre moyen jugé approprié par l'Assemblée Générale.
 
 % Par l'AG ou un organe plus réactif (Bureau ?)
 % Reply Edit May 22 Cyril:
