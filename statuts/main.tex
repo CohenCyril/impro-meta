@@ -28,8 +28,6 @@
 \def\thesubsection       {\arabic{article}}
 
 \makeatletter
-\newcommand{\sfranky@subsection}{\thesubsection}
-\newcommand{\sfranky@section}{\thesection}
 \def\@seccntformat#1{\@ifundefined{#1@cntformat}%
 {\csname the#1\endcsname\quad}% default
 {\csname #1@cntformat\endcsname}% individual control
