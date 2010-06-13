@@ -15,25 +15,17 @@
   META},pdfsubject={Association META : Improvisation Théâtrale, Basée
   à Paris},pdfkeywords={META, improvisation, impro, théâtre,
   spectacle, paris, association loi 1901, statuts }]{hyperref}
-
-
 \usepackage{fancyheadings}
 \pagestyle{fancyplain}
-% Remember chapter title
 
+\input{../macros.tex}
 
 \renewcommand{\headrulewidth}{0.4pt} %Trait haut
 \renewcommand{\footrulewidth}{0pt} %Trait bas
 \newcommand{\article}[1]{\subsection{#1}\addtocounter{article}{1}}
-\newcommand{\meta}{\textbf{META}}
 \newcounter{article}
 \def\thesection       {\Roman{section}}
 \def\thesubsection       {\arabic{article}}
-
-%\makeatletter
-%\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname\quad}
-%\makeatother
-%
 
 \makeatletter
 \newcommand{\sfranky@subsection}{\thesubsection}
@@ -46,7 +38,12 @@
 \def\subsection@cntformat{Article \thesubsection\quad}
 \makeatother
 \newcommand{\artref}[1]{article \ref{#1}}
-\title{Statuts de l'association \meta{}}
+\title{Statuts de l'association \metae{}}
+
+
+
+
+
 \begin{document}
 
 \date{}
@@ -70,8 +67,8 @@
 \section{Présentation de l’association}
 \article{Constitution et dénomination}
 \label{sec:constitution}
-Il est fondé entre les adhérents aux présents statuts une association
-régie par la Loi 1901, ayant pour dénomination \textit{\meta{} Est une Troupe Associative}, ci-après désignée par \textit{\meta{}} ou par \textit{l'association}.
+Il est fondé entre les adhérents aux présents \statuts{} une association
+régie par la Loi 1901, ayant pour dénomination \textit{\metae{}}, ci-après désignée par \textit{\meta{}} ou par \textit{l'association}.
 
 \article{But}
 \label{sec:but}
@@ -115,35 +112,34 @@ La durée de l’association est illimitée.
 L’association se compose de membres d'honneur, de membres bienfaiteurs
 et de membres adhérents.
 
-Les membres d'honneur sont désignés par l'Assemblée Générale pour les
+Les membres d'honneur sont désignés par l'\AG pour les
 services qu'ils ont rendus ou rendent à l'association. Ils sont
 dispensés du paiement de la cotisation annuelle et ont le droit de
-participer à l'Assemblée Générale avec voix délibérative.
+participer à l'\AG avec voix délibérative.
 
 Les membres bienfaiteurs qui acquittent une cotisation spéciale fixée
-par le règlement intérieur ont le droit de participer à l'Assemblée
-Générale avec voix délibérative.
+par le \RI{} ont le droit de participer à l'\AG avec voix délibérative.
 
 Les membres adhérents personnes physiques ou morales acquittent une
-cotisation fixée annuellement par le règlement intérieur. Ils sont
-membres de l'Assemblée Générale avec voix délibérative.
+cotisation fixée annuellement par le \RI{}. Ils sont
+membres de l'\AG avec voix délibérative.
 
 \article{Admission et adhésion}
 \label{sec:admission}
-Pour faire partie de l’association, il faut être agréé par le bureau
-qui statue, selon les modalités prévues par le règlement intérieur, sur les demandes d'admission présentées. Il faut alors adhérer aux présents
-statuts et au règlement intérieur et s’acquitter de la cotisation dont le montant est fixé dans le \RI{}.
+Pour faire partie de l’association, il faut être agréé par le \bureau{}
+qui statue, selon les modalités prévues par le \RI{}, sur les demandes d'admission présentées. Il faut alors adhérer aux présents
+\statuts{} et au \RI{} et s’acquitter de la cotisation dont le montant est fixé par ce dernier.
 
 \article{Perte de la qualité de membre}
 \label{sec:perte}
 La qualité de membre se perd par :
 \begin{itemize}
-\item la démission adressée par écrit à un membre du bureau de l'association,
+\item la démission adressée par écrit à un membre du \bureau{} de l'association,
 
 \item le décès,
 
-\item l'exclusion ou radiation, prononcées par le bureau pour infraction
-aux statuts ou au règlement intérieur, ou pour motif portant préjudice
+\item l'exclusion ou radiation, prononcées par le \bureau{} pour infraction
+aux \statuts{} ou au \RI{}, ou pour motif portant préjudice
 aux intérêts moraux et matériels de l'association, ou pour motif
 grave.
 \end{itemize}
@@ -159,19 +155,19 @@ l’association répond de ses engagements.
 \section{Organisation et fonctionnement}
 
 \article{Moyen de correspondance}
-Les adhérents peuvent adresser leur correspondance écrite par lettre signée. Alternativement, l'adhérent peut choisir un moyen de communication sécurisé précisé dans le règlement intérieur. Les moyens précisés dans le règlement intérieur devront être conformes à la loi 2000-230 du 13 mars 2000 portant adaptation du droit de la preuve aux technologies de l'information et relative à la signature numérique, ils devront suivre les dispositions décrites dans le décret d'application 2001-272 du 30 mars 2001. 
+Les adhérents peuvent adresser leur correspondance écrite par lettre signée. Alternativement, l'adhérent peut choisir un moyen de communication sécurisé précisé dans le \RI{}. Les moyens précisés dans le \RI{} devront être conformes à la loi 2000-230 du 13 mars 2000 portant adaptation du droit de la preuve aux technologies de l'information et relative à la signature numérique, ils devront suivre les dispositions décrites dans le décret d'application 2001-272 du 30 mars 2001. 
 
 \article{Décisions collectives des membres}
 \label{sec:decisions-collectives}
 
-Les décisions collectives des membres sont prises, soit en Assemblée
-Générale, soit par voie de consultation écrite. Elles peuvent
-encore résulter du consentement de tous les membres exprimé dans un
-acte authentique ou sous seing privé. Sous réserve des dispositions de
-l’\artref{sec:ago}, tout membre de l’association peut soumettre à la
-collectivité un projet de décision collective.
+Les décisions collectives des membres sont prises, soit en \AG{}, soit
+par voie de consultation écrite. Elles peuvent encore résulter du
+consentement de tous les membres exprimé dans un acte authentique ou
+sous seing privé. Sous réserve des dispositions de l’\artref{sec:ago},
+tout membre de l’association peut soumettre à la collectivité un
+projet de décision collective.
 
-En cas de consultation écrite, le bureau envoie à chaque membre le
+En cas de consultation écrite, le \bureau{} envoie à chaque membre le
 texte des résolutions proposées accompagné des documents nécessaires à
 l’information des membres. Les membres disposent d’un délai de quinze
 jours francs à compter de la date de réception des textes des
@@ -185,8 +181,7 @@ membres.
 
 \article{Assemblée Générale Ordinaire}
 \label{sec:ago}
-L’Assemblée Générale ordinaire se réunit au moins une fois par an et
-comprend tous les membres de l’association à jour de leur cotisation.
+L’\AGO{} se réunit au moins une fois par an et comprend tous les membres de l’association à jour de leur cotisation.
 
 Quinze jours au moins avant la date fixée, les membres de
 l’association sont convoqués par écrit et l’ordre du jour est inscrit
@@ -194,37 +189,30 @@ sur les convocations.
 
 %O: c'est un peu chiant par écrit, nan ?
 
-Le bureau expose la situation morale ou le rapport d'activité de
+Le \bureau{} expose la situation morale ou le rapport d'activité de
 l'association puis rend compte de l'exercice financier. Le bilan est
 soumis à l'approbation de l'assemblée. 
-L’Assemblée Générale se prononce sur le rapport moral ou d’activité et
-sur les comptes de l’exercice financier. Elle délibère sur les
-orientations à venir.
+L’\AG{} se prononce sur le rapport moral ou d’activité et sur les comptes de l’exercice financier. Elle délibère sur les orientations à venir.
 
-Elle pourvoit à la nomination ou au renouvellement des membres du
-bureau, suivant la procédure fixée par le règlement intérieur. Elle
-fixe aussi le montant de la cotisation annuelle, autorise les emprunts
-bancaires et la conclusion de contrats de travail.
+Elle pourvoit à la nomination ou au renouvellement des membres du \bureau{}, suivant la procédure fixée par le \RI{}. Elle fixe aussi le montant de la cotisation annuelle, autorise les emprunts bancaires et la conclusion de contrats de travail.
 
 
 \article{Assemblée Générale Extraordinaire}
 \label{sec:age}
 
-Sur demande d'au moins la moitié des membres inscrits ou de sa propre
-initiative, le bureau % le président ?
-peut convoquer une assemblée générale extraordinaire.
+Sur demande d'au moins la moitié des membres inscrits ou de sa propre initiative, le \bureau{} peut convoquer une \AGE{}.
 
-\article{Modalités communes aux Assemblée Générale Ordinaire et Extraordinaires}
+\article{Modalités communes aux \AG{} ordinaire et extraordinaires}
 \label{sec:ag}
-L'ordre du jour est établi par le bureau. % ou le président ?
+L'ordre du jour est établi par le \bureau{}. % ou le président ?
 % Seuls les points à l'ordre du jour peuvent être votés
 
-Les membres peuvent soumettre par écrit au bureau des points à ajouter à l'ordre du jour jusqu'à 7 jours avant la date de l'Assemblée Générale.
+Les membres peuvent soumettre par écrit au \bureau{} des points à ajouter à l'ordre du jour jusqu'à 7 jours avant la date de l'\AG{}.
 
 
 Aucun quorum n'est requis. Le vote est effectué à bulletin secret ou à
 main levée, suivant la nature de la décision : le choix est laissé à
-l'initiative du président, excepté l'élection des membres du bureau
+l'initiative du président, excepté l'élection des membres du \bureau{}
 pour laquelle le scrutin secret est requis.
 % enlever le "excepté [...]" ?
 % O : Non je pense pas
@@ -246,8 +234,8 @@ bénéficient du droit de vote et sont éligibles.
 
 \article{Bureau}
 \label{sec:bureau}
-L’assemblée générale désigne, parmi les membres, au scrutin secret, un
-bureau composé de :
+L’\AG{} désigne, parmi les membres, au scrutin secret, un
+\bureau{} composé de :
 \begin{itemize}
 \item un(e) président(e),
   
@@ -256,53 +244,56 @@ bureau composé de :
 \item un(e) secrétaire.
 \end{itemize}
 
-Le bureau prépare les réunions des membres. Il exécute les décisions de l’assemblée et traite les affaires courantes de l’association.
+Le \bureau{} prépare les réunions des membres. Il exécute les décisions de l’assemblée et traite les affaires courantes de l’association.
 
-\article{Pouvoir du Bureau}
+\article{Pouvoir du \bureau{}}
 \label{sec:pouvoirs}
-Le bureau est investi des pouvoirs les plus étendus dans les limites
+Le \bureau{} est investi des pouvoirs les plus étendus dans les limites
 de l’objet de l’association et dans le cadre des résolutions adoptées
 par décision collective des membres. Il peut autoriser tous actes ou
 opérations qui ne sont pas statutairement de la compétence de
-l’Assemblée Générale.
+l’\AG{}.
 
 Il est chargé :
 \begin{itemize}
-\item de la mise en \oe{}uvre des orientations décidées par l'Assemblée
-  Générale,
+\item de la mise en \oe{}uvre des orientations décidées par l'\AG{},
 
   \item de la préparation des bilans, de l'ordre du jour et des
-  propositions de modification du règlement intérieur présentés à
-  l'Assemblée Générale,
+  propositions de modification du \RI{} présentés à
+  l'\AG{},
 
-  \item de la préparation des propositions de modifications des statuts
-  présentés à l'Assemblée Générale extraordinaire.
+  \item de la préparation des propositions de modifications des \statuts{}
+  présentés à l'\AGE{}.
+
+  \item de la préparation du \RI{}.
+
+  
 \end{itemize}
+
 
 
 \article{Rémunération}
 \label{sec:remuneration}
-Les fonctions de membres du bureau sont bénévoles ; seuls les frais et
+Les fonctions de membres du \bureau{} sont bénévoles ; seuls les frais et
 débours occasionnés pour l’accomplissement du mandat social sont
 remboursés au vu des pièces justificatives.
 
 \article{La Troupe}
 \label{sec:troupe}
-Un collège de membres appelé \og{}La Troupe\fg{} est chargé de l'organisation des spectacles de l'association. Les représentations de ces spectacles sont données par La Troupe. Le fonctionnement de ce collège est fixé par le règlement intérieur.
+Un collège de membres appelé \textit{\troupe{}} est chargé de l'organisation des spectacles de l'association. Les représentations de ces spectacles sont données par \troupe{}. Le fonctionnement de ce collège est fixé par le \RI{}.
 
 \article{Décisions extraordinaires}
 \label{sec:decisions-extra}
 Les décisions collectives des membres portant sur la dissolution de
-l’association, la modification des statuts, la conclusion d’un emprunt
-bancaire ou d’un contrat de travail par l’association requièrent
-l’unanimité des membres.
+l’association, la modification des \statuts{}, la conclusion d’un emprunt
+bancaire ou d’un contrat de travail par l’association doivent être prises en \AG{} et requièrent l’unanimité des votants.
 
 \article{Règlement intérieur}
 \label{sec:reglement}
-Un règlement intérieur est établi par le bureau qui le fait approuver
-par l’Assemblée Générale.
+Un \RI{} est établi par le \bureau{} qui le fait approuver
+par l’\AG{}.
 
-Il régit entre autre le montant des cotisations des adhérents, les règles d'exclusions et les modalités de fonctionnement de la troupe, ainsi que l'organisation du fonctionnement de l'association. En cas de contradiction entre les statuts et le règlement intérieur, les statuts prévalent.
+Il régit entre autre le montant des cotisations des adhérents, les règles d'exclusions et les modalités de fonctionnement de \troupe{}, ainsi que l'organisation du fonctionnement de l'association. En cas de contradiction entre les \statuts{} et le \RI{}, les \statuts{} prévalent.
 
 % O:Formulation à revoir/compléter
 
@@ -310,13 +301,13 @@ Il régit entre autre le montant des cotisations des adhérents, les règles d'e
 \article{Organisation de réflexions}
 \label{sec:reflexions}
 L'association organisera au moins une fois par an une réflexion autour
-de l'improvisation (conférence, table ronde, Assemblée Générale, ou
+de l'improvisation (conférence, table ronde, \AG{}, ou
 tout autre moyen que l'association jugera bon d'employer).
 
 
 \article{Projet artistique}
 \label{sec:projet}
-Suite à la réflexion menée suivant les conditions de l'\artref{sec:reflexions}, le bureau définira les orientations artistiques pour la Troupe. Il confiera l'établissement et la réalisation d'un projet artistique suivant ces orientations au directeur artistique de la Troupe. Ce projet devra comprendre au moins un format de spectacle d'improvisation innovant et original.
+Suite à la réflexion menée suivant les conditions de l'\artref{sec:reflexions}, le \bureau{} définira les orientations artistiques pour \troupe{}. Il confiera l'établissement et la réalisation d'un projet artistique suivant ces orientations au \DA{} de \troupe{}. Ce projet devra comprendre au moins un format de spectacle d'improvisation innovant et original.
 
 % Reply Edit May 30 Cyril:
 % Donc, si je comprends bien, cela revient à dire que l'on doit produire
@@ -349,7 +340,7 @@ Suite à la réflexion menée suivant les conditions de l'\artref{sec:reflexions
 \article{Dépôt et diffusion des formats}
 \label{sec:depot-et-diffusion}
 Les nouveaux formats créés dans le projet artistique (voir
-\artref{sec:reflexions}) seront déposés sous licence libre précisé par le règlement intérieur. Ils seront diffusés sur Internet et tout autre moyen jugé approprié par l'Assemblée Générale.
+\artref{sec:reflexions}) seront déposés sous licence libre précisé par le \RI{}. Ils seront diffusés sur Internet et tout autre moyen jugé approprié par l'\AG{}.
 
 % Par l'AG ou un organe plus réactif (Bureau ?)
 % Reply Edit May 22 Cyril:
@@ -403,12 +394,9 @@ privés.
 
 \article{Dissolution}
 \label{sec:dissolution}
-La dissolution est prononcée par l'Assemblée Générale Ordinaire ou
-Extraordinaire. Elle doit être approuvée par au moins deux tiers des
-membres présents à l'Assemblée Générale, et la présence de la totalité
-du bureau est nécessaire.
+La dissolution est prononcée par l'\AGO{} ou \AGE{}. Conformément à \artref{sec:decisions-collectives} elle doit être approuvée à l'unanimité des membres votants à l'\AG{}, de plus la présence de la totalité du \bureau{} est nécessaire.
 
-En cas de dissolution, l’Assemblée Générale désigne un ou plusieurs
+En cas de dissolution, l’\AG{} désigne un ou plusieurs
 liquidateurs qui seront chargés de la liquidation des biens de
 l’association et dont elle détermine les pouvoirs.
 
@@ -418,7 +406,7 @@ une part quelconque des biens de l’association.
 
 L’actif net subsistant sera attribué obligatoirement à une ou
 plusieurs associations poursuivant des buts similaires et qui seront
-désignés par l’Assemblée Générale.
+désignés par l’\AG{}.
 
 
 \end{document}
