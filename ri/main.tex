@@ -11,6 +11,8 @@
 \usepackage{eurosym} 
 \usepackage{fancyhdr} 
 \usepackage{fancybox}
+\usepackage{xr}
+\externaldocument[statuts-]{../statuts/main}
 
 \usepackage[colorlinks=true,urlcolor=black,linkcolor=black,pdfauthor={Association
   META},pdftitle={Règlement intérieur de l'assocation
@@ -22,8 +24,24 @@
 \renewcommand{\headrulewidth}{0.4pt} %Trait haut
 \renewcommand{\footrulewidth}{0pt} %Trait bas
 
+\newcommand{\article}[1]{\subsection{#1}\addtocounter{article}{1}}
+\newcounter{article}
+\def\thesection       {\Roman{section}}
+\def\thesubsection       {\arabic{article}}
+
+\makeatletter
+\def\@seccntformat#1{\@ifundefined{#1@cntformat}%
+{\csname the#1\endcsname\quad}% default
+{\csname #1@cntformat\endcsname}% individual control
+}
+\def\section@cntformat{Titre \thesection\quad}
+\def\subsection@cntformat{Article \thesubsection\quad}
+\makeatother
+
 \input{../macros.tex}
 
+\newcommand{\artref}[1]{article \ref{#1}}
+\newcommand{\artrefst}[1]{article \ref{statuts-#1} des \statuts{}}
 
 
 \title{Règlement intérieur de l'association \metae{}}
@@ -47,9 +65,6 @@
 %Bas droite \lfoot{}
 
 
-\newcounter{article}
-\setcounter{article}{1}
-
 Le \RI{} a pour objet de préciser les \statuts{} de l'association ayant pour dénomination \textit{\metae{}}, ci-après désignée par \textit{\meta{}} ou par \textit{l'association}, dont le siège est au 40 Rue Montgallet 75012 Paris et dont l'objet est :
 \begin{itemize}
 \item la pratique, la promotion et la diffusion de l'improvisation théâtrale au travers d'entraînements et de spectacles ;
@@ -59,14 +74,16 @@ Le \RI{} a pour objet de préciser les \statuts{} de l'association ayant pour d�
 
 Le présent \RI{} est transmis à l'ensemble des membres ainsi qu'à chaque nouvel adhérent.
 
+\setcounter{article}{1}
 \section{Membres}
 
-\subsection{Admission de nouveaux membres}
+\article{Admission de nouveaux membres}
+\label{sec:admiss-de-nouv}
 
-Conformément à l'article 7 des \statuts{}, l'association \meta{} a vocation à accueillir de nouveaux membres sur décision du \bureau{}. Ceux-ci devront respecter la procédure d'admission suivante : dépôt d'une demande écrite auprès du \bureau{}, et passage d'un entraînement d'essai. Le \bureau{} fournira une réponse écrite dans les quinze (15) jours suivant l'entraînement d'essai informant le demandeur de sa décision appuyée d'une justification. Les nouveaux membres se verront remettre une copie du \RI{}, et s'acquitteront d'une cotisation précisée dans l'article suivant.
+Conformément à l'\artrefst{sec:admission}, l'association \meta{} a vocation à accueillir de nouveaux membres sur décision du \bureau{}. Ceux-ci devront respecter la procédure d'admission suivante : dépôt d'une demande écrite auprès du \bureau{}, et passage d'un entraînement d'essai. Le \bureau{} fournira une réponse écrite dans les quinze (15) jours suivant l'entraînement d'essai informant le demandeur de sa décision appuyée d'une justification. Les nouveaux membres se verront remettre une copie du \RI{}, et s'acquitteront d'une cotisation précisée dans l'article suivant.
 
-\subsection{Cotisation}
-
+\article{Cotisation}
+\label{sec:cotisation}
 Montant des cotisations :
 
 \begin{itemize}
@@ -99,8 +116,10 @@ Le versement de la cotisation annuelle pour les membres de l'association doit ê
 
 Toute cotisation versée à l'association est définitivement acquise. Un remboursement de cotisation en cours d'année ne peut être exigé en cas de démission, d'exclusion ou de décès d'un membre.
 
-\subsection{Exclusion}
-Conformément à l'article 8 des \statuts{} de l'association, seul les cas suivants  peuvent induire une procédure d'exclusion :
+\article{Exclusion}
+\label{sec:exclusion}
+
+Conformément à l'\artrefst{sec:perte} de l'association, seul les cas suivants  peuvent induire une procédure d'exclusion :
 \begin{itemize}
 \item non-participation à l'association pendant un délai de trois (3) ans,
 \item défaut de paiement de la cotisation annuelle,
@@ -110,7 +129,8 @@ Conformément à l'article 8 des \statuts{} de l'association, seul les cas suiva
 
 Celle-ci doit être prononcée par l'\AG{}, après avoir entendu le membre contre lequel la procédure d'exclusion est engagée.
 
-\subsection{Démission - Décès - Disparition}
+\article{Démission - Décès - Disparition}
+\label{sec:demiss-deces-disp}
 Le membre démissionnaire devra adresser sous lettre sa décision au \bureau{}.
 Aucune restitution de cotisation n'est due au membre démissionnaire.
 
@@ -118,8 +138,10 @@ En cas de décès, la qualité de membre disparaît avec la personne.
 
 \section{Organisation et fonctionnement de l'association}
 
-\subsection{Communication des adhérents}
-Conformément à l'Article 10 des \statuts{}, les adhérents peuvent envoyer leurs communications écrites par lettre signées ou également par :
+\article{Communication des adhérents}
+\label{sec:comm-des-adher}
+
+Conformément à l'\artrefst{sec:moyen-de-corresp}, les adhérents peuvent envoyer leurs communications écrites par lettre signées ou également par :
 \begin{itemize}
 \item e-mail doté d'une clé gpg signée par l'un des membre du \bureau{}
 \item formulaire internet sécurisé sur le site de l'association
@@ -127,7 +149,8 @@ Conformément à l'Article 10 des \statuts{}, les adhérents peuvent envoyer leu
 \end{itemize}
 
 
-\subsection{Fonctionnement du \bureau{}}
+\article{Fonctionnement du \bureau{}}
+\label{sec:fonct-du-bure}
 
 \subsubsection*{Composition - Désignation - Démission}
 \label{sec:comp-design}
@@ -144,11 +167,11 @@ Les fonctions de président et de trésorier sont interdites aux mineurs. Les ca
 
 
 Il est possible d’être représenté à une \AG{} en donnant, par écrit, une procuration nominale, une même personne ne pouvant détenir plus
-d’une procuration (cf \ref{sec:ag}).
+d’une procuration (cf \artref{sec:ag}).
 
 Si l'un des membre du \bureau{} démissionne ou perd son statut de membre adhérent, il est alors remplacé temporairement par un membre adhérent coopté par le \bureau{}. Une \AGE{} doit être organisée dans les 30 jours suivant la démission afin de pourvoir le poste lors d'un vote à bulletin secret.
 
-\subsubsection{Fonctions}
+\subsubsection*{Fonctions}
 \label{sec:fonctions}
 
 Les membres du \bureau{} prennent en charge les trois fonctions de
@@ -200,8 +223,7 @@ Le secrétaire ou un membre du \bureau{} veille au respect de la réglementation
 \item Dans les communes de plus de 3 500 habitants, le dépôt en mairie d’un bilan certifié conforme si l’association reçoit de la commune une subvention supérieure à 76 300 \euro{} ou représentant plus de 50\% de son budget.
 \end{itemize}
 
-\subsubsection{Réunion - décisions - votes}
-\label{sec:reun-decis-votes}
+\subsubsection*{Réunion - décisions - votes}
 
 Les modalités de fonctionnement du \bureau{} sont les suivantes : il
 doit se réunir au moins une fois par mois. Les décisions sont
@@ -209,22 +231,22 @@ prises à l'unanimité des membres du \bureau{}. Sur toutes les questions,
 ils recherche un consensus, chacun d’entre eux pouvant s’opposer à
 une décision.
 
-\subsection{Assemblée générale ordinaire}
-Conformément à l'article 12 des \statuts{}, l’\AG{} ordinaire se réunit au moins une fois par an et comprend tous les membres de l’association à jour de leur cotisation.
+\article{Assemblée générale ordinaire}
+\label{sec:assembl-gener-ordin}
+Conformément à l'\artrefst{sec:ago}, l’\AG{} ordinaire se réunit au moins une fois par an et comprend tous les membres de l’association à jour de leur cotisation.
 
 Une \AG{} doit être tenue avant la dernière semaine de septembre. L'\AG{} statue sur le renouvellement du \bureau{}.
 
 Les modalités de renouvellement du \bureau{} sont les suivantes : sont éligibles tous les membres adhérents à jour de leur cotisation. L'\AG{} se prononce pour chaque poste séparément.
 
-\subsection{Assemblée Générale Extraordinaire}
+\article{Assemblée Générale Extraordinaire}
 \label{sec:age}
-Conformément à l'article 13 des \statuts{}, l'\AGE{} peut être réunie sur demande d'au moins la moitié des membres inscrits ou à l'initiative du \bureau{}.
+Conformément à l'\artrefst{sec:age}, l'\AGE{} peut être réunie sur demande d'au moins la moitié des membres inscrits ou à l'initiative du \bureau{}.
 
-\subsection{Modalités communes aux Assemblée Générale Ordinaire et Extraordinaires}
+\article{Modalités communes aux Assemblée Générale Ordinaire et Extraordinaires}
 \label{sec:ag}
 
 \subsubsection*{Ordre du jour et convocation}
-\label{sec:ordre-du-jour-1}
 
 L'ordre du jour est établi par le \bureau{}.
 
@@ -237,14 +259,12 @@ informé par courrier postal.
 % mouais ?
 
 \subsubsection*{Procuration}
-\label{sec:procuration}
 
 Il est possible d’être représenté à une \AG{} en donnant,
 par écrit, une procuration nominale, une même personne ne pouvant détenir plus
 d’une procuration.
 
-\subsubsection{Quorum et vote}
-\label{sec:quorum}
+\subsubsection*{Quorum et vote}
 
 Aucun quorum n'est requis. Le vote est effectué à bulletin secret ou à
 main levée, suivant la nature de la décision : le choix est laissé à
@@ -252,8 +272,7 @@ l'initiative du président, excepté l'élection des membres du \bureau{}
 pour laquelle le scrutin secret est requis.
 
 
-\subsubsection{Décisions}
-\label{sec:decisions}
+\subsubsection*{Décisions}
 
 Seules les questions inscrites à l’ordre du jour peuvent être
 valablement évoquées en assemblée.
@@ -265,11 +284,11 @@ président compte double.
 Seuls les membres de l’association à jour de leur cotisation
 bénéficient du droit de vote et sont éligibles.
 
-\subsection{Transparence des comptes}
+\article{Transparence des comptes}
 \label{sec:transp-des-compt}
 % cf statuts improdisaque article 11b
 
-\subsection{Fonctionnement de la Troupe}
+\article{Fonctionnement de la Troupe}
 \label{sec:fonctionnement-troupe}
 \troupe{} est un collège de membres adhérents chargé d'assurer la représentation des spectacles. Le recrutement d'un membre dans \troupe{} se fera par cooptation à l'unanimité des membres de \troupe{}.
 
@@ -291,16 +310,17 @@ La qualité de membre de \troupe{} peut se perdre par les moyens suivants :
 Lorsque le nombre de membres de \troupe{} est strictement inférieur à six (6), les membres du \bureau{} participent aux décisions d'admission et d'exclusion de \troupe{}, ils doivent alors être présents aux collèges où sont prises ces décisions.
 
 \section{Organisation des activités artistiques}
-\subsection{Entraînements}
+\article{Entraînements}
+\label{sec:entrainements}
 L'association organise deux types d'entraînements : les entraînements réguliers et les entraînements spectacles.
 
-\subsubsection{Entraînements réguliers}
+\subsubsection*{Entraînements réguliers}
 L'association organise au moins une fois par mois un entraînement. Un animateur d'entraînement désigné par le \DA{} sera responsable du contenu de l'entraînement. Tous les membres adhérents et bienfaiteurs peuvent y participer. Tous les membres d'honneur peuvent y assister.
 
-\subsubsection{Entraînements spectacles}
+\subsubsection*{Entraînements spectacles}
 Sur décision du \DA{}, des entraînements réservés à \troupe{} peuvent être organisés. Des membres adhérents ou membres d'honneurs peuvent être invités par \troupe{} à y participer. Des membres peuvent être invités à y assister.
 
-\subsection{Spectacles}
+\article{Spectacles}
 \label{sec:spectacles}
 Le \DA{} est responsable de l'organisation des spectacles, entre autres :
 \begin{itemize}
@@ -315,13 +335,15 @@ Le \DA{} a toute autorité pour choisir à chaque représentation qui jouera le 
 
 Le \DA{} peut déléguer librement ses tâches.
 
-\subsection{Licence des formats de spectacles}
-Conformément à l'Article 24 des \statuts{}, les formats créés par l'association seront déposés sous licence Creative Commons (CC BY-SA).
+\article{Licence des formats de spectacles}
+\label{sec:licence-des-formats}
+Conformément à l'\artrefst{sec:depot-et-diffusion}, les formats créés par l'association seront déposés sous licence Creative Commons (CC BY-SA).
 
 
 \section{Disposition diverses}
-\subsection{Règlement intérieur}
-Conformément à l'article 19 des \statuts{} de l'association, le \RI{} est établi par le \bureau{}.
+\article{Règlement intérieur}
+\label{sec:reglement-interieur}
+Conformément à l'\artrefst{sec:reglement} de l'association, le \RI{} est établi par le \bureau{}.
 
 Il peut être modifié sur demande de l'\AG{} ou du \bureau{}, suivant la procédure suivante :
 \begin{itemize}
