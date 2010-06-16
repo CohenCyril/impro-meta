@@ -4,4 +4,6 @@
 *.bbl
 *.out
 *.aux
+*.ps
+*.dvi
 auto/
