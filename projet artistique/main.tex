@@ -1,0 +1,82 @@
+\documentclass[a4paper,french,10pt]{article}
+\usepackage[french]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} %\usepackage{isolatin1} \usepackage{t1enc}
+\usepackage{pslatex} % Pour une meilleure police avec le PDF
+\usepackage{ae,aecompl,aeguill} 
+\usepackage{marvosym} %pour l'¤
+\usepackage{url} 
+\usepackage{color} 
+\usepackage{eurosym} 
+\usepackage{shadow}
+\usepackage{fancyhdr} 
+\usepackage{fancybox}
+\usepackage[colorlinks=true,urlcolor=black,linkcolor=black,pdfauthor={Association
+  META},pdftitle={Statuts de l'assocation
+  META},pdfsubject={Association META : Improvisation Théâtrale, Basée
+  à Paris},pdfkeywords={META, improvisation, impro, théâtre,
+  spectacle, paris, association loi 1901, statuts }]{hyperref}
+\usepackage{fancyheadings}
+\pagestyle{fancyplain}
+
+\input{../macros.tex}
+
+\renewcommand{\headrulewidth}{0.4pt} %Trait haut
+\renewcommand{\footrulewidth}{0pt} %Trait bas
+\newcommand{\article}[1]{\subsection{#1}\addtocounter{article}{1}}
+\newcounter{article}
+\def\thesection       {\Roman{section}}
+\def\thesubsection       {\arabic{article}}
+
+\makeatletter
+\def\@seccntformat#1{\@ifundefined{#1@cntformat}%
+{\csname the#1\endcsname\quad}% default
+{\csname #1@cntformat\endcsname}% individual control
+}
+\def\section@cntformat{Titre \thesection\quad}
+\def\subsection@cntformat{Article \thesubsection\quad}
+\makeatother
+\newcommand{\artref}[1]{article \ref{#1}}
+\title{Projet artistique de \meta{}}
+
+
+
+
+
+\begin{document}
+
+\date{2010 - 2011}
+
+\maketitle 
+\pagestyle{fancy} 
+
+\lhead{\textit{Projet artistique pour \meta{}}}
+
+\section{Formats proposés}
+Au cours de cette année \meta{} proposera comme formats :
+\begin{itemize}
+\item scènes libres, courtes ou longues
+\item Harold
+\item Série
+\end{itemize}
+
+\section{Formats dévelopés}
+\meta{} Se concentrera sur le développement du format intitulé \textit{Fantôme de la liberté}.
+Les points clés de ce format sont :
+\begin{itemize}
+\item Le suivi d'un personnage (et non d'une histoire).
+\item La possibilité pour le public de changer à n'importe quel moment le personnage suivi.
+\end{itemize}
+
+\section{Spectacles}
+\meta{}Se produira cette année au bar \em{le Papille}, et jouera les formats proposés. De plus, \meta{} se produira en fin de saison au bar littéraire \em{Le P'tit Ney}. Ce sera l'occasion de produir pour la première fois le \textit{Fantôme de la liberté} travaillé au cours de l'année.
+
+\section{Projets de spectacles}
+Les membres de l'association s'attacherons à trouver une scène de représentation plus grande et plus adaptée aux spectacles d'improvisation. De plus, ils tenteront de trouver un festival d'été dans lequel ils pourraient jouer un ou plusieurs spectacles.
+
+\section{Projet de conférence}
+Afin de commencer le cycle de conférences, \meta{} s'attachera à proposer une série de conférences-spectacles, à Paris, sur une journée (Samedi ?). L'idéal serait de proposer 2 ou 3 conférences-spectacles sur les thèmes de l'impro, et des formats, puis d'organiser des tables rondes pour la création de format. Le soir pourrait être consacré à des spectacles des troupes participantes. Il serait intéressant de fixer un prix d'entrée modique (5 euros ou moins) afin de pouvoir proposer des cachets aux intervenants (150 à 200 euros ?).
+Trouver un lieu adapté doit être une priorité (l'ISEE rue de Montreuil semble plutôt bien adaptée). Les intervenants pourraient être Richard, Nabla, Ian, ...
+La publicité se ferait auprès des troupes parisiennes, ainsi que des ligues des grandes écoles (publicité grâce aux improvisades).
+
+\end{document}
