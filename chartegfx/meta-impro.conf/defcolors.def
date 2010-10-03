@@ -1,0 +1,21 @@
+%couleurs logo 
+
+\definecolor{bleufonc}{rgb}{0,0.4,1} %bleu foncé
+\definecolor{marronfonc}{rgb}{0.3333,0,0} % maron
+\definecolor{jaunefonc}{rgb}{1,0.8,0} % jaune
+\definecolor{orangefonc}{rgb}{1,0.4,0} %orange
+\definecolor{bleucl}{rgb}{0.2509,0.4,1} %bleu clair
+\definecolor{marroncl}{rgb}{0.5019,0.2509,0.2509} % maron clair
+\definecolor{jaunecl}{rgb}{1,0.8509,0.2509} % jaune clair
+\definecolor{orangecl}{rgb}{1,0.5490,0.2509} %orange clair
+\definecolor{noir}{cmyk}{.75,0,0,1} % Pantone 426 C
+\definecolor{gris}{cmyk}{0,0,0,.77} % Pantone 424 C
+\definecolor{griscl}{cmyk}{0,0,0,.40} % Pantone 422 C
+\definecolor{gristrcl}{cmyk}{0,0,0,.20} % Pantone 420 C
+\definecolor{twingo2}{cmyk}{.23,1,.86,.17}
+\definecolor{blanc}{cmyk}{0,0,0,0} % Papier
+
+\definecolor{aubergine}{rgb}{0.5176,0.1215,0.3921}
+\definecolor{magenta}{rgb}{0.8157,0,0.3216}
+\definecolor{fushia}{rgb}{0.7059,0.0078,0.4000}
+\definecolor{rosecl}{rgb}{0.8235,0.5216,0.6980}

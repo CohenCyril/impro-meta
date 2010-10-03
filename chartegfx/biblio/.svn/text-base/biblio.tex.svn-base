@@ -1,0 +1,7 @@
+%\lhead[\thepage]{BIBLIOGRAPHIE} \chead[]{} \rhead[BIBLIOGRAPHIE]{\thepage}
+%\lfoot[]{} \cfoot[]{} \rfoot[]{}
+\bibliographystyle{biblio/bibtopics/perso_these}
+\bibliography{biblio/biblio}
+%\nocite{chatillon,tani,dsscsto,wchen1,tipxp,tioutils,probaenpc,cremona97,pa00,tl02,gaot,eddy01,zf04,puel,sgw05,arnoux,ma03,ds05,cb05,mr05,fkt05,fd,wi04,deb02,fh98,deavirginie,deagael,la98,ba06,cl02,nt648652662005,nja06,crdl1,sae1,sae2,sae3,crdl2,adams1,gh05,db05,ntbru1,ntbru2,ntbru3,ntbru4,ntbru5,ntbru6,ntbru7,ntbru8,ntbru9,ntbru10,ntbru11,cm03,poga,odenthal,rrinria,simon1,simon2,simon3,simon4,simon5,simon6,simon7,simon8,simon9,dugoff,mmaud,mogarob,nttds,barou,ntfranck,ma04}
+
+

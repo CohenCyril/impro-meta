@@ -1,0 +1,59 @@
+\RequirePackage{iftex}
+\RequirePackage{textcomp}
+\RequirePackage{etex}
+\RequirePackage{calc}   				% pour calculer des tailles
+\RequirePackage{eso-pic}
+\RequirePackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\RequirePackage[frenchb]{babel}
+\RequirePackage{array}
+\RequirePackage{psfrag}
+\RequirePackage{epsfig}
+\RequirePackage{longtable}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+%\RequirePackage{movie15}
+\RequirePackage{booktabs} % Meilleures lignes dans les tableaux
+\RequirePackage{xspace} % Bonne gestion des espaces aprï¿œs les macros (commande \xspace)
+\RequirePackage{amsmath} % Composition des formules mathï¿œmatiques
+\RequirePackage{algorithm,algorithmic} %ï¿œcriture d'algorithmes ou de pseudo code
+\RequirePackage{marvosym} % Syboles
+\RequirePackage[euler-digits]{eulervm} % Police Euler pour les formules
+
+\ifXeTeX
+	\RequirePackage{xltxtra}
+	\RequirePackage{fontspec}
+	\RequirePackage{polyglossia}
+	\setmainlanguage{french}
+\else
+\ifPDFTeX
+	\RequirePackage[T1]{fontenc}
+	\RequirePackage{textcomp}
+	\RequirePackage[utf8]{inputenc}
+	\RequirePackage{marvosym} % Syboles
+	\RequirePackage[osf,sc]{mathpazo} % Palatino avec petites capitales et chiffres elz�viriens (voir aussi commande \chc d�finie plus bas)
+	\RequirePackage[euler-digits]{eulervm} % Police Euler pour les formules
+	\RequirePackage{helvet} % Helvetica comme police sans serif
+	\RequirePackage{microtype} % Typographie avanc�e (par exemple : ponctuation marginale, etc.)
+\fi\fi
+
+\RequirePackage{textcase} % Pour la commande \MakeTextUppercase
+\RequirePackage{soul} % Pour l'espacement des lettres (voir aussi plus bas les commandes dï¿œfinies ï¿œ ce sujet)
+\RequirePackage{fancyhdr} % Non utilisï¿œ
+\RequirePackage{fancybox}
+\RequirePackage[subfigure]{tocloft}
+\RequirePackage{minitoc}
+\RequirePackage{changepage}					%pour modifier les marges d'une page
+\RequirePackage{shorttoc}
+\RequirePackage{multicol}
+\RequirePackage{vmargin}
+\RequirePackage{titlesec} % Numï¿œrotation marginale des paragraphes
+\RequirePackage[bookmarks, bookmarksopen, bookmarksopenlevel=2, colorlinks, pdfstartview=FitH, filecolor=gris, urlcolor=gris, linkcolor=gris, citecolor=gris, pdftitle={\type\ \numero}, pdfauthor={\hrauteur}]{hyperref}%\ - \organisation}]{hyperref}
+\RequirePackage{remreset} % Pour pouvoir ne pas remettre ï¿œ zï¿œro les numï¿œros de figure ï¿œ chaque chapitre
+\RequirePackage[section,below]{placeins} % Pour la commande \FloatBarrier
+\RequirePackage[hang]{subfigure} % Pour les subfigures
+\RequirePackage{pstricks}
+\RequirePackage{pst-node}
+\RequirePackage[bottom]{footmisc}
+\RequirePackage{ifthen}
+

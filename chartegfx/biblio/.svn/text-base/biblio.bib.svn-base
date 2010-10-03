@@ -1,0 +1,332 @@
+@string{lad = "Pierre Ladevèze"}
+@string{me="Andréa Loyer"}
+@string{sncf="SNCF, Direction de l'Innovation et de la Recherche"}
+
+@article{lat85,
+author = lad,
+title = "Sur une famille d'algorithmes en mécanique des structures",
+year = 1985,
+Journal = "Comptes Rendus de l'Académie des Sciences",
+Volume = 2
+}
+
+@book{texcomp,
+author = "Michel Goossens and , Franck Mittelbach and Alexander Samarin",
+title = "The {{\LaTeX}} {C}ompanion",
+booktitle = "The {{\LaTeX}} {C}ompanion",
+publisher = AW,
+year = 1993,
+month = "December",
+ISBN = "0-201-54199-8",
+library = "Yes",
+}
+
+@book{lsdynaman,
+author = "Livermore Software Technology Corporation",
+title = "LS-Dyna Theory Manual",
+publisher = "Livermore Software Technology Corporation",
+year = 1999,
+}
+
+@techreport{noteloyer1,
+author = me,
+title = "Regard sur la méthode LATIN et le schéma d'intégration HHT",
+institution = sncf,
+year = 2008,
+}
+
+@techreport{noteloyer2,
+author = me,
+title = "Application de la LATIN en dynamique à une poutre",
+institution = sncf,
+year = 2008,
+}
+
+@techreport{noteloyer3,
+author = me,
+title = "Description de l'implémentation de l'algorithme LATIN",
+institution = sncf,
+year = 2008,
+}
+
+@techreport{noteloyer4,
+author = me,
+title = "De l'importance du schéma d'intégration",
+institution = sncf,
+year = 2008,
+}
+
+@techreport{noteloyer5,
+author = me,
+title = "Définition d'un indicateur d'erreur",
+institution = sncf,
+year = 2008,
+}
+
+@techreport{noteloyer6,
+author = me,
+title = "Retour sur l'influence des intégrateurs",
+institution = sncf,
+year = 2009,
+}
+
+
+@techreport{noteloyer7,
+author = me,
+title = "Sur une méthode incrémentale pour le contact frottant",
+institution = sncf,
+year = 2009,
+}
+
+@techreport{noteloyer8,
+author = me,
+title = "Optimisation des paramètres du Lagrangien augmenté pour le contact frottant",
+institution = sncf,
+year = 2009,
+}
+
+@phdthesis{sengupta,
+author = "Jayant Sen Gupta",
+title = "Mésodynamique et rupture des composites 3D C/C sous choc : une stratégie numérique dédiée",
+year = 2005,
+school = "École Normale Supérieure de Cachan",
+}
+
+@phdthesis{lorangphd,
+author = "Xavier Lorang",
+title = "Instabilité vibratoire des structures en contact frottant : Application au crissement des freins de TGV",
+year = 2007,
+school = "École Polytechnique",
+}
+
+@hdrthesis{hdrpanpan,
+author = "Laurent Champaney",
+title = "Outils de conception et d'analyse pour les assemblages de structures complexes",
+year = "2004",
+school = "Université de Versailles Saint Quentin (UVSQ)",
+}
+
+@article{lemouss00,
+author = "Hervé Lemoussu and Pierre-Alain Boucard and Pierre Ladevèze",
+title = "A 3D shock computational strategy for real assembly and shock attenuator",
+year = 2002,
+Journal = "Advances in engineering software",
+}
+
+@article{hhterror06,
+author = "Luis M. Lacoma and Ignacio Romero",
+title = "Error estimation for the HHT method in non-linear solid dynamics",
+year = 2006,
+Journal = "Computers and Structures",
+volume = 85,
+pages = 158-169,
+}
+
+@article{carpenter,
+author ="Nicholas J. Carpenter and Robert L. Taylor and Michael G. Katona",
+year = 1991,
+title= "Lagrange constraints for transient finite element surface contact",
+Journal= "International journal for numerical methods in engineering",
+volume = 32,
+pages = 103-128,
+}
+
+@article{lacha,
+author ="Laurent Champaney and Jean-Yves Cognard and Pierre Ladevèze",
+year = 1998,
+title= "Modular analysis of assemblages of three-dimensional structures with unilateral contact conditions",
+Journal= "Computers and Structures",
+volume = 73,
+pages = 249-266,
+}
+
+@article{dostal05,
+author= "Zedn\v{e}k Dost\'{a}l and David Hor\'{a}k and Radek Ku\v{c}era and  V\'{i}t Vondr\'{a}k and Jaroslav Haslinger and Ji\v{r}\'{i} Dobi\'{a}\v{s} and Svatopluk Pt\'{a}k",
+year= 2005,
+title= "FETI based algorithms for contact problems: scalability,
+large displacements and 3D Coulomb friction",
+Journal= "Computer methods in applied mechanics and engineering",
+volume = 194,
+pages = 395-409,
+}
+
+
+@article{dostal00,
+author= "Zedn\v{e}k Dost\'{a}l and Francisco A.M. Gomes Neto and Sandra A. Santos",
+year= 2000,
+title= "Solution of contact problems by FETI domain decomposition
+with natural coarse space projections",
+Journal= "Computer methods in applied mechanics and engineering",
+volume = 190,
+pages = 1611-1627,
+}
+
+@article{dostal02,
+author= "Zedn\v{e}k Dost\'{a}l and Jaroslav Haslinger and Radek Ku\v{c}era",
+year=2002,
+Journal= "Journal of computational and applied mathematics",
+title = "Implementation of the fixed point method in contact problems with Coulomb friction based on a dual splitting type technique",
+volume=140,
+pages=245-256,
+}
+
+@article{feti-dpc,
+title = "The FETI Family of Domain Decomposition Methods for Inequality-Constrained Quadratic Programming: Application to Contact Problems with Conforming and Nonconforming Interfaces",
+journal = "Computer Methods in Applied Mechanics and Engineering",
+volume = "In Press, Accepted Manuscript",
+number = "",
+pages = " - ",
+year = "2009",
+note = "",
+issn = "0045-7825",
+doi = "DOI: 10.1016/j.cma.2008.12.014",
+url = "http://www.sciencedirect.com/science/article/B6V29-4VB01RF-3/2/5972692a175e981432036d4b765e4b33",
+author = "Philip Avery and Charbel Farhat",
+keywords = "Contact",
+keywords = "Domain Decomposition",
+keywords = "FETI",
+keywords = "Quadratic Programming"
+}
+
+@article{bipot,
+title = "The bipotential method: A constructive approach to design the complete contact law with friction and improved numerical algorithms",
+journal = "Mathematical and Computer Modelling",
+volume = "28",
+number = "4-8",
+pages = "225 - 245",
+year = "1998",
+note = "Recent Advances in Contact Mechanics",
+issn = "0895-7177",
+doi = "DOI: 10.1016/S0895-7177(98)00119-8",
+url = "http://www.sciencedirect.com/science/article/B6V0V-3V45NTJ-K/2/46fc0ee267f64bee5af4af3de04f7f4b",
+author = "Géry De Saxcé and Zhi-Qiang Feng",
+keywords = "Contact",
+keywords = "Friction",
+keywords = "Finite element method",
+keywords = "Convex analysis",
+keywords = "Augmented Lagrangian method",
+keywords = "Bipotential"
+}
+
+@article{jean_tmm,
+title = "Consistent time discretization for a dynamical frictional contact problem and complementary techniques",
+author = "Didier Vola and Elaine Pratt and Michel Jean and Michel Raous",
+journal = "Revue européenne des éléments finis",
+volume = 7,
+number = 1-2-3,
+year = 1998,
+pages = 149-162,
+}
+
+@article{FengCrosMagnain,
+title = "Un algorithme efficace pour les problèmes d'impact avec frottement",
+author = "Zhi-Qiang Feng and Jean-Michel Cros and Benoît Magnain",
+journal = "Revue européenne des éléments finis",
+volume = 14,
+number = 1,
+year = 2005,
+pages = 65-86,
+}
+
+
+@article{Ayyad2008,
+title = "Formulation and analysis of two energy-consistent methods for nonlinear elastodynamic frictional contact problems",
+journal = "Journal of Computational and Applied Mathematics",
+volume = "In Press, Corrected Proof",
+number = "",
+pages = " - ",
+year = "2008",
+note = "",
+issn = "0377-0427",
+doi = "DOI: 10.1016/j.cam.2008.09.024",
+url = "http://www.sciencedirect.com/science/article/B6TYH-4TJX1SV-1/2/9a5a2400f23ffd5a21ae04847155474a",
+author = "Y. Ayyad and M. Barboteu",
+keywords = "Contact and friction",
+keywords = "Nonlinear elastodynamics",
+keywords = "Time integration schemes",
+keywords = "Energy-conserving algorithms"
+}
+
+@article{Khenous2006163,
+title = "Hybrid discretization of the Signorini problem with Coulomb friction. Theoretical aspects and comparison of some numerical solvers",
+journal = "Applied Numerical Mathematics",
+volume = "56",
+number = "2",
+pages = "163 - 192",
+year = "2006",
+note = "",
+issn = "0168-9274",
+doi = "DOI: 10.1016/j.apnum.2005.03.002",
+url = "http://www.sciencedirect.com/science/article/B6TYD-4FXNRB0-3/2/9aec163be25e07bb9ca9df22440296f0",
+author = "Houari Boumediène Khenous and Julien Pommier and Yves Renard",
+keywords = "Unilateral contact",
+keywords = "Coulomb friction",
+keywords = "Signorini problem",
+keywords = "Bipotential",
+keywords = "Fixed point",
+keywords = "Newton method",
+keywords = "SOR method",
+keywords = "Uzawa method"
+}
+
+@article{Khenous2008918,
+title = "Mass redistribution method for finite element contact problems in elastodynamics",
+journal = "European Journal of Mechanics - A/Solids",
+volume = "27",
+number = "5",
+pages = "918 - 932",
+year = "2008",
+note = "",
+issn = "0997-7538",
+doi = "DOI: 10.1016/j.euromechsol.2008.01.001",
+url = "http://www.sciencedirect.com/science/article/B6VKW-4RSBY0M-2/2/f5fdc61817633616f52850e279ca7a83",
+author = "Houari Boumediène Khenous and Patrick Laborde and Yves Renard",
+keywords = "Elasticity",
+keywords = "Unilateral contact",
+keywords = "Time integration schemes",
+keywords = "Energy conservation",
+keywords = "Stability",
+keywords = "Mass redistribution method"
+}
+
+@article{Ayyad2009669,
+title = "A frictionless viscoelastodynamic contact problem with energy consistent properties: Numerical analysis and computational aspects",
+journal = "Computer Methods in Applied Mechanics and Engineering",
+volume = "198",
+number = "5-8",
+pages = "669 - 679",
+year = "2009",
+note = "",
+issn = "0045-7825",
+doi = "DOI: 10.1016/j.cma.2008.10.004",
+url = "http://www.sciencedirect.com/science/article/B6V29-4TPHRK8-1/2/0a0083c0e5b8a2cf95c195c94d08d656",
+author = "Y. Ayyad and M. Barboteu and J.R. Fernández",
+keywords = "Dynamic contact",
+keywords = "Viscoelasticity",
+keywords = "Unilateral contact",
+keywords = "Error estimates",
+keywords = "Energy-conserving scheme",
+keywords = "Numerical simulations"
+}
+
+@manual{ttb_bibtex,
+title = "Tame the BeaST",
+author = "Nicolas Markey",
+url = "http://www.lsv.ens-cachan.fr/~markey/BibTeX/doc/ttb_en.pdf",
+year = "2005",
+}
+
+@manual{ttbbib,
+title = "Tame the BeaST",
+author = "Nicolas Markey",
+url = "http://www.lsv.ens-cachan.fr/~markey/BibTeX/doc/ttb_en.pdf",
+year = "2005",
+}
+
+@manual{courslatexfh,
+title = "Cours LATEX formation permanente,
+Observatoire de Paris",
+author = "Florence Henry",
+url = "http://www.lesia.obspm.fr/perso/florence-henry/CoursLatex/cours.pdf",
+year = "2004",
+}

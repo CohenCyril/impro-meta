@@ -1,0 +1,16 @@
+
+%Macros pour les noms
+\newcommand{\meta}{\textbf{META}}
+\newcommand{\metae}{\meta{} \textbf{Est une Troupe Associative}}
+\newcommand{\AG}{Assemblée Générale}
+\newcommand{\AGs}{Assemblées Générales}
+\newcommand{\AGO}{\AG{} ordinaire}
+\newcommand{\AGE}{\AG{} extraordinaire}
+\newcommand{\AGsO}{\AGs{} ordinaires}
+\newcommand{\AGsE}{\AGs{} extraordinaires}
+\newcommand{\bureau}{bureau}
+\newcommand{\RI}{règlement intérieur}
+\newcommand{\troupe}{la Troupe}
+\newcommand{\statuts}{statuts}
+\newcommand{\DA}{directeur artistique}
+\newcommand{\PA}{projet artistique}

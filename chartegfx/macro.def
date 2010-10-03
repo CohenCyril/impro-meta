@@ -1,0 +1,21 @@
+\renewcommand{\up}[1]{\textsuperscript{#1}}
+\renewcommand{\headrulewidth}{0.4pt} %Trait haut
+\renewcommand{\footrulewidth}{0pt} %Trait bas
+
+\newcommand{\article}[1]{\subsection{#1}\addtocounter{article}{1}}
+\newcounter{article}
+\def\thesection       {\Roman{section}}
+\def\thesubsection       {\arabic{article}}
+
+\makeatletter
+\def\@seccntformat#1{\@ifundefined{#1@cntformat}%
+{\csname the#1\endcsname\quad}% default
+{\csname #1@cntformat\endcsname}% individual control
+}
+\def\section@cntformat{Titre \thesection\quad}
+\def\subsection@cntformat{Article \thesubsection\quad}
+\makeatother
+
+\newcommand{\artref}[1]{article \ref{#1}}
+\newcommand{\artrefst}[1]{article \ref{statuts-#1} des \statuts{}}
+%éééé

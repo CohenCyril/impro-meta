@@ -1,0 +1,19 @@
+\newcommand{\autALR}{Andréa \textsc{Loyer}}
+\newcommand{\autCCN}{Cyril \textsc{Cohen}}
+\newcommand{\autOJT}{Ouardane \textsc{Jouannot}}
+\newcommand{\autBureau}{Le Bureau de l’association}
+\newcommand{\autPrez}{Le Président}
+\newcommand{\autTrez}{Le Trésorier}
+\newcommand{\autSecr}{Le secrétaire}
+\newcommand{\autMbr}{Les membres de l’association}
+\newcommand{\autTrp}{La Troupe}
+
+\newcommand{\hrautALR}{Andréa Loyer}
+\newcommand{\hrautCCN}{Cyril Cohen}
+\newcommand{\hrautOJT}{Ouardane Jouannot}
+\newcommand{\hrautBureau}{Le\ Bureau\ de\ l’association}
+\newcommand{\hrautPrez}{Le Président}
+\newcommand{\hrautTrez}{Le Trésorier}
+\newcommand{\hrautSecr}{Le secrétaire}
+\newcommand{\hrautMbr}{Les\ membres\ de\ l’association}
+\newcommand{\hrautTrp}{La\ Troupe}

@@ -1,0 +1,11 @@
+%\chapter{Utilisation du fichier de style SNCF}
+\minitoc
+\section{Entêtes du document}
+\input{chapitres/chapitre1/section1.tex}
+
+\section{Compilation et structure d'un document}
+\input{chapitres/chapitre1/section4.tex}
+
+
+\section{Pour rentrer un peu plus dans la technique}
+\input{chapitres/chapitre1/section5.tex}

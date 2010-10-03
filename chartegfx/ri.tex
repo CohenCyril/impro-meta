@@ -1,0 +1,63 @@
+%% Choix des champs de la page de garde
+%%
+%% Changer la ligne commentée pour activer/désactiver un champ.
+%% Champ Thème
+\def\AffTheme{true}
+%\def\AffTheme{false}
+%% Champ objectif
+\def\AffObjectif{true}
+%\def\AffObjectif{false}
+%% Champ Action
+\def\AffAction{true}
+%\def\AffAction{false}
+%% Champ Attente
+\def\AffAttente{true}
+%\def\AffAttente{false}
+%% Champ Info
+\def\AffInfo{true}
+%\def\AffInfo{false}
+\def\AffResume{true}
+%\def\AffResume{false}
+%\def\WithPartner{true}
+\def\WithPartner{false}
+\def\DocType{article}
+%\def\DocType{report}
+\def\AbstractFile{chapitres/abstract.tex} % Fichier contenant le résumé
+\newcommand{\Lieu}{Paris}
+\newcommand{\type}{Règlement intérieur} % Note technique, etc...
+\newcommand{\numero}{version du \today}
+\newcommand{\theme}{Règlement intérieur de \meta}
+\newcommand{\objectif}{Diffuser le règlement aux membres}
+\newcommand{\attente}{Votre information}
+\newcommand{\auteur}{\autBureau}
+\newcommand{\hrauteur}{\hrautBureau}
+\newcommand{\telephone}{n.a.}
+\newcommand{\facsimile}{n.a.}
+\newcommand{\api}{}
+\newcommand{\email}{bureau@meta-impro.org}
+\newcommand{\adresse}{26 rue Clisson}
+\newcommand{\villecp}{75013 Paris}
+\newcommand{\direction}{\metae}
+\newcommand{\service}{\vspace{-0.3cm}}
+\newcommand{\uet}{\vspace{-0.3cm}}
+\newcommand{\organisation}{Association \meta}
+\newcommand{\PartNames}{Partenaire1}
+\newcommand{\pnumber}{1}
+\newcommand{\plogo}{logo}
+\newcommand{\destinataires}{\autCCN\hfill \\
+\autOJT\hfill\\
+\autALR\hfill
+}
+\newcommand{\copie}{\autMbr \hfill
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper, twoside]{\DocType}
+\usepackage{meta-impro}
+\usepackage{xr}
+\externaldocument[statuts-]{statuts}
+\input{macro.def}\usepackage{marvosym}
+\usepackage{eurosym} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{ri_master.tex}

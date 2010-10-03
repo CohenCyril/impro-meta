@@ -1,0 +1,561 @@
+%%
+%% This is file `meta-impro.sty',
+%% 
+%% This file is part of the package `meta-impro' for use with LaTeX2e.
+%% 
+%% Please send error reports and suggestions for improvements to
+%%   Andrea Loyer.
+%% 
+\ProvidesPackage{meta-impro}
+  [2010/09/25 v0.1a Modèle de documents META]
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+
+
+\renewcommand*\footnoterule{%
+  \kern-3\p@
+  \ifx\@textbottom\relax\else\vskip \z@ \@plus.0005fil\fi
+  \hrule\@width.4\columnwidth
+  \kern 2.6\p@}
+\newcommand\deffootnote[4][]{%
+  \long\def\@makefntext##1{%
+    \setlength{\@tempdimc}{#3}%
+    \def\@tempa{#1}\ifx\@tempa\@empty
+      \@setpar{\@@par
+        \@tempdima = \hsize
+        \addtolength{\@tempdima}{-#2}
+        \parshape \@ne #2 \@tempdima}%
+    \else
+      \addtolength{\@tempdimc}{#2}%
+      \addtolength{\@tempdimc}{-#1}%
+      \@setpar{\@@par
+        \@tempdima = \hsize
+        \addtolength{\@tempdima}{-#1}
+        \@tempdimb = \hsize
+        \addtolength{\@tempdimb}{-#2}
+        \parshape \tw@ #1 \@tempdima #2 \@tempdimb}%
+    \fi
+    \par
+    \parindent\@tempdimc\noindent
+    \ftn@font\hbox to \z@{\hss\@@makefnmark}##1}
+  \def\@@makefnmark{\hbox{\ftnm@font{#4}}}
+}
+\newcommand*{\ftn@font}{\normalfont}
+\newcommand*{\scr@fnt@footnote}{\ftn@font}
+\newcommand*{\ftnm@font}{}
+\newcommand*{\scr@fnt@footnotenumber}{\ftnm@font}
+\newcommand*{\scr@fnt@footnotelabel}{\ftnm@font}
+\newcommand*{\scr@fnt@instead@footnotetext}{footnote}
+\newcommand*\deffootnotemark[1]{\def\@makefnmark{\hbox{\ftntm@font{#1}}}}
+\newcommand*{\ftntm@font}{}
+\newcommand*{\scr@fnt@footnotereference}{\ftntm@font}
+\newcommand*{\scr@fnt@footnoteref}{\ftntm@font}
+\newcommand*{\thefootnotemark}{\@thefnmark}
+\deffootnote[1em]{1.5em}{1em}
+  {\textsuperscript{\thefootnotemark}}
+\deffootnotemark{\hspace{.1111em}\textsuperscript{\thefootnotemark}}
+\DeclareRobustCommand*\textsubscript[1]{%
+  \@textsubscript{\selectfont#1}}
+\newcommand{\@textsubscript}[1]{%
+  {\m@th\ensuremath{_{\mbox{\fontsize\sf@size\z@#1}}}}}
+
+%Définition des noms d'auteurs et des couleurs de la charte
+
+\input{meta-impro.conf/defauteurs.def} % Noms de personnes
+\input{meta-impro.conf/macros.def}     % Entités de l'asso (Troupe, Nom de l'asso, AG; etc...)
+\input{meta-impro.conf/packages.def}   % Liste des paquets à charger.
+\input{meta-impro.conf/defcolors.def}  % Couleurs charte graphique
+
+\graphicspath{{images/}}	           % Path images
+
+% Définition de commandes internes au paquet
+
+% Insertion de l'image de fond de la page de garde
+\newcommand\BackgroundPic{ % Insertion
+	\put(60,-110){
+		\begin{minipage}[b]{\paperwidth}{
+			\vfill
+			\centering
+			\includegraphics[width=22cm]{fond}
+			\vfill
+			}
+		\end{minipage}
+}}
+
+
+\newcommand\EndBgPic{ % Enlèvement
+	\ClearShipoutPicture
+}
+
+
+%Insersion  de l'image de fond de la TOC
+\newcommand\Filigrane{ %Insertion
+	\put(150,-35){
+		\begin{minipage}[b]{\paperwidth}{%
+			\vfill
+			\centering
+			\includegraphics[width=22cm]{fondtoc}%
+			\vfill
+			}
+		\end{minipage}
+}}
+
+% Trait haut page de garde
+\newcommand\TraitAubergine{
+	\put(-180,677){
+		\begin{minipage}[b]{\paperwidth}{%
+			\vfill
+			\centering
+			{\color{orangefonc}
+			\begin{tikzpicture}
+				\draw[line width=1.5pt] (0cm,0cm) -- (0cm,5cm);
+			\end{tikzpicture}}%
+			\vfill
+			}
+		\end{minipage}
+}}
+
+
+% Trombone cadre
+\newcommand\Trombone[2]{% Commande assez longue et bourrine
+	% Calcul de longueurs
+	\newlength{\ltromba}
+	\newlength{\ltrombb}
+	\newlength{\ltrombc}
+	\newlength{\ltrombd}
+	\newlength{\htromba}
+	\newlength{\htrombb}
+	\settowidth{\ltromba}{#1}
+	\settowidth{\ltrombb}{#2}
+	\settoheight{\htromba}{\hspace{\ltrombc}#1\\ \hspace{\ltrombc}  #2}
+	\setlength{\ltrombb}{\maxof{\ltrombb}{\ltromba}}
+	\setlength{\ltrombc}{.5\ltrombb}
+	\setlength{\ltrombd}{1.55\ltrombb}
+	\settoheight{\htrombb}{
+		\begin{tikzpicture}
+			\node [inner sep=0pt,above right] 
+        	{\includegraphics[width=\ltrombd]{trombone}};
+		\end{tikzpicture}}
+	\addtolength{\htrombb}{-\htromba}
+	\setlength{\htrombb}{0.5\htrombb}
+	\addtolength{\ltrombc}{-.5\ltromba}
+	%Mise en place du trombone
+	\put(68,500){
+		\begin{minipage}[b]{0pt}{%
+			\centering
+			{
+			\tikzstyle{background grid}=[draw, black!50,step=.5cm]
+			\begin{tikzpicture}
+				\node [inner sep=0pt,above right] 
+                {\includegraphics[width=\ltrombd]{trombone}};
+			\end{tikzpicture}
+			}
+			}
+		\end{minipage}
+	}
+
+%Écriture dans le trombone
+	\put(68,500){
+		\begin{minipage}[b]{\ltrombd}{
+			\centering
+			{
+				\center{
+					\vspace{1\htrombb}
+					\begin{tabular}{p{0.3\ltrombb}l}
+						    & #1 \\
+						    & #2 
+					\end{tabular}
+					\vspace{1\htrombb}
+						}
+			}
+			}
+		\end{minipage}
+}}%Fin trombone
+
+%%%%
+%
+\setlength{\extrarowheight}{3pt} % Augmentation de la hauteur des lignes
+%
+%% 1.4 Symboles, mathï¿œmatiques, gestion des espaces
+\NoAutoSpaceBeforeFDP
+\ifXeTeX
+	\setmainfont[Numbers=OldStyle,Ligatures=Historic]{TeX Gyre Heros}
+\fi
+\title{\type\ \numero}
+\author{\auteur}
+\urlstyle{rm} % Liens ï¿œcrits avec la fonte normale
+%
+%%dï¿œfintion des couleurs
+
+%
+%% dï¿œfinition du path pour les images
+
+%
+%% MYITEMIZE
+\newcommand{\puce}{\;\;{\color{griscl}\Diamondblack}\;\;}
+\newenvironment{myitemize}{\renewcommand
+\labelitemi{$\puce$}\begin{itemize}}{\end{itemize}}
+\pagestyle{fancy}						% 
+%
+%% 1.8 Table des matiï¿œres, numï¿œrotation
+\setcounter{tocdepth}{3}			
+\setcounter{secnumdepth}{4}
+\mtcselectlanguage{french}
+\setmarginsrb{20mm}{2.5mm}{20mm}{20mm}{0mm}{0mm}{3mm}{7mm}			%dï¿œfinition des marges de base
+\columnsep = 10 mm
+\parskip = 3 mm
+\parindent = 10 mm
+%
+%% 1.10 Chapitrage
+%
+%\renewcommand*\sfdefault{ugq}
+%%chapitre si class=report
+\ifthenelse{\equal{\DocType}{report}}{
+\renewcommand{\chapter} {\clearpage      % Starts new page.
+   \thispagestyle{fancy}           % Page style of chapter page is 'plain'
+   \global\@topnum\z@              % Prevents figures from going at top of page.
+   \@afterindenttrue               % Inserts indent in first paragraph.  Change
+   \secdef\@chapter\@schapter}     % to \@afterindentfalse to remove indent.
+
+
+\titleformat{\chapter}
+    {\relax\color{orangefonc}}{{\color{orangefonc}{\sf\LARGE\thechapter\,\,\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}}{1em}{\sf\bfseries\LARGE}
+}{}
+
+%section
+\ifthenelse{\equal{\DocType}{report}}{
+\titleformat{\section}
+    {\relax\color{gris}}{{\color{gris}{\sf\Large\thesection\,\,\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}}{1em}{\sf\bfseries\Large}}
+{
+\titleformat{\section}
+    {\relax\color{orangefonc}}{{\color{orangefonc}{\sf\Large\thesection\,\,\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}}{1em}{\sf\bfseries\Large}
+  }      
+% subsections
+\titleformat{\subsection}
+    {\relax\color{gris}}{{\color{gris}{\sf\large\thesubsection\,\,\color{orangefonc}{\rule[-0.3em]{1pt}{1.25em}}}}}{1em}{\sf\bfseries\large}
+% subsubsections
+\titleformat{\subsubsection}
+    {\relax\color{gris}}{{\color{gris}{\sf\thesubsubsection\,\,\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}}{1em}{\sf\bfseries}
+% paragraphs
+\titleformat{\paragraph}[runin]
+    {\relax}{{\color{griscl}{\sf\theparagraph\,\,\color{orangefonc}{\rule[-0.3em]{1pt}{1.25em}}}}}{1em}{\sf\bfseries}
+% subparagraphs
+\titleformat{\subparagraph}[runin]
+    {\relax}{{\color{griscl}{\sf\thesubparagraph\,\,\color{orangefonc}{\rule[-0.3em]{1pt}{1.25em}}}}}{1em}{\sf\bfseries}
+% descriptionlabels
+    \renewcommand{\descriptionlabel}[1]{\hspace{\labelsep}\spacedlowsmallcaps{#1}}
+    
+% 1.11 Flottants
+    
+    \deffootnote{0em}{0em}{\thefootnotemark\hspace*{.5em}} % Numï¿œrotation marginale des notes de bas de page
+\renewcommand{\thefootnote}{\emph{\@alph\c@footnote}}
+
+% 2 Commandes personnalisï¿œes
+% 2.1 Rï¿œfï¿œrences (cf.)
+\newcommand{\cf}[1]{({\em cf.}~\ref{#1})}
+\newcommand{\cffig}[1]{({\em cf.} figure~\ref{#1})}
+\newcommand{\cftab}[1]{({\em cf.} tableau~\ref{#1})}
+\newcommand{\cfnote}[1]{({\em cf.} note~\ref{#1})}
+\newcommand{\algref}[1]{(alg. \ref{#1})}
+
+% 2.2 Grandeurs (par exemple : 1.23 m)
+\newcommand{\mes}[2]{$#1~\mathrm{#2}$}
+% 2.3 Mme, Melle
+\newcommand{\Mme}{M\up{me}}
+\newcommand{\Melle}{M\up{elle}}
+
+% 2.4 Typographie
+\sodef\allcapsspacing{\upshape}{0.15em}{0.65em}{0.6em}  
+\sodef\lowsmallcapsspacing{\scshape}{0.075em}{0.5em}{0.6em}     
+\DeclareRobustCommand{\spacedallcaps}[1]{\MakeTextUppercase{\allcapsspacing{#1}}} 
+\DeclareRobustCommand{\allcaps}[1]{\MakeTextUppercase{#1}} 
+\DeclareRobustCommand{\spacedlowsmallcaps}[1]{\MakeTextLowercase{\textsc{\lowsmallcapsspacing{#1}}}}
+\DeclareRobustCommand{\lowsmallcaps}[1]{\MakeTextLowercase{\textsc{#1}}} 
+\newcommand{\lsc}[1]{\lowsmallcaps{#1}}
+\newcommand{\chc}[1]{{\fontfamily{pxr}\selectfont #1}} % Chiffre non elzï¿œviriens (par exemple pour les projets, C44, B85, etc.)
+
+% 2.5 Commandes scientifiques
+\newcommand{\tpo}[1]{\ensuremath{\underline{#1}~}}   %tenseur d'ordre 1
+\newcommand{\tso}[1]{\ensuremath{\underline{\underline{#1}}~}} % ordre 2
+\newcommand{\tqo}[1]{\ensuremath{\underline{\underline{\underline{\underline{#1}}}}~}} %quatriï¿œme ordre
+\newcommand{\vecEF}[2][default]{\ifthenelse{ \equal{#1}{jsv} }{
+\ensuremath{\mathbf{\boldsymbol{\lowercase{#2}}} }}{
+\left\{\ensuremath{\mathbf{\boldsymbol{\uppercasecase{#2}}} }\right\}} 
+}
+\newcommand{\matEF}[2][default]{\ifthenelse{ \equal{#1}{jsv} }{
+\ensuremath{\mathbf{\boldsymbol{\uppercase{#2}}} }}{
+\left[\ensuremath{\mathbf{\boldsymbol{\uppercasecase{#2}}} }\right]} 
+}
+\renewcommand{\vec}[1]{\ensuremath{\boldsymbol{\mathbf{\lowercase{#1}}}}}
+\newcommand{\mat}[1]{\ensuremath{\boldsymbol{\mathbf{\uppercase{#1}}}}}
+
+
+%% 2.6 Commandes psfrag
+\newcommand{\fragitall}{\input{FRAGDEF/fragdef.tex}} % permet de procï¿œder ï¿œ tous les remplacements dï¿œfinis dans 
+%% 2.75 Commandes TOC
+\renewcommand{\cfttoctitlefont}{\hfill\Huge\bfseries\MakeUppercase} % change toc title to upper case
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+
+\renewcommand{\cftsecleader}{\LARGE\bfseries\cftdotfill{\cftsecdotsep}}
+
+%% Symboles ajoutï¿œs entre le nï¿œ et le nom
+\renewcommand{\cftsecaftersnum}{\LARGE\hspace{0.2em}\color{griscl}\rule[-0.3em]{1pt}{0.9em}\hspace{0.1em}}
+\renewcommand{\cftsubsecaftersnum}{\LARGE\hspace{0.2em}\color{orangefonc}\rule[-0.3em]{1pt}{0.9em}\hspace{0.1em}}
+\renewcommand{\cftsubsubsecaftersnum}{\LARGE\hspace{0.2em}\color{griscl}\rule[-0.3em]{1pt}{0.9em}\hspace{0.1em}}
+\ifthenelse{\equal{\DocType}{report}}{
+\renewcommand{\cftchapaftersnum}{\LARGE\hspace{0.2em}\color{griscl}\rule[-0.3em]{1pt}{0.9em}\hspace{0.1em}}
+\renewcommand{\cftsecaftersnum}{\LARGE\hspace{0.2em}\color{orangefonc}\rule[-0.3em]{1pt}{0.9em}\hspace{0.1em}}
+\renewcommand{\cftsubsecaftersnum}{\LARGE\hspace{0.2em}\color{griscl}\rule[-0.3em]{1pt}{0.9em}\hspace{0.1em}}
+}{}
+%
+%% Style de numï¿œro de page
+\settowidth{\cftsecnumwidth}{00}
+\settowidth{\cftsubsecnumwidth}{00}
+\renewcommand{\cftsecpagefont}{\LARGE\color{orangefonc}\hfill} %num en LARGE et aubergine
+\renewcommand{\cftsubsecpagefont}[2]{} %pas de num
+\renewcommand{\cftsubsubsecpagefont}[2]{} %pas de num
+\ifthenelse{\equal{\DocType}{report}}{
+\settowidth{\cftchapnumwidth}{XX}
+\renewcommand{\cftchappagefont}{\LARGE\color{orangefonc}\hfill} %num en LARGE et aubergine
+}{}
+
+% Type de points entre le nom et le num de page
+\renewcommand{\cftsecdotsep}{\cftnodots}
+\renewcommand{\cftsubsecdotsep}{\cftnodots}
+\renewcommand{\cftsubsubsecdotsep}{\cftnodots}
+\ifthenelse{\equal{\DocType}{report}}{
+\renewcommand{\cftchapdotsep}{\cftnodots}
+}{}
+
+% Polices pour les titres et nï¿œ de section/subsection/subsubsection
+\renewcommand{\cftsubsecfont}{\bfseries\def\@linkcolor{gris}}
+\renewcommand{\cftsubsubsecfont}{\bfseries\def\@linkcolor{gris}}
+\renewcommand{\cftsecfont}{\large\bfseries\def\@linkcolor{orangefonc}}
+\ifthenelse{\equal{\DocType}{report}}{
+\renewcommand{\cftchapfont}{\large\bfseries\def\@linkcolor{orangefonc}}
+\renewcommand{\cftsecfont}{\large\bfseries\def\@linkcolor{gris}}
+}{}
+
+%
+%%Appel de la toc avec fond
+\newcommand{\metatoc}[2]{
+\changepage{-60mm}{}{}{}{}{60mm}{}{}{}{}
+\AddToShipoutPicture{\Filigrane}
+\shorttoc{#1}{#2}
+\vfill
+\ifthenelse{\equal{\DocType}{report}}{
+\vfill
+}{\newpage}
+\ClearShipoutPicture
+
+
+\changepage{40mm}{-21mm}{14mm}{7mm}{}{-40mm}{}{}{}{}
+\ifthenelse{\equal{\DocType}{report}}{
+\dominitoc
+\faketableofcontents
+\ifthenelse{\equal{\AffResume}{true}}{\adjustmtc}{}}{
+\faketableofcontents}
+}
+
+
+%% 2.6 Commandes relatives ï¿œ la page de garde
+\newcommand{\InputAbstract}{
+\ifthenelse{\equal{\AffResume}{true}}{
+{ 
+\color{gris}\input{\AbstractFile}
+\begin{multicols}{2}
+\begin{flushright}
+~~~~~~~~~~~~~~~~~~~~~~~~\auteur
+\end{flushright} 
+\begin{flushleft}
+\end{flushleft}
+\end{multicols}}}{}
+}
+
+
+\newcommand{\carre}[1]{{\color{gris} \tiny \textbf{\textsf{\raisebox{.1em}{(}#1\raisebox{.1em}{)}}}}}
+
+
+%Définition page de garde
+%Commande maketitle
+\renewcommand{\maketitle}{
+	\addtocontents{toc}{\cftpagenumbersoff{subsection}}
+	\addtocontents{toc}{\cftpagenumbersoff{subsubsection}}
+	\setlength{\cftbeforetoctitleskip}{4cm}
+		\ifthenelse{\equal{\DocType}{article}}{
+		\setlength{\cftsubsecindent}{1cm}
+		\setlength{\cftsubsubsecindent}{2.\cftsubsecindent}
+		\settowidth{\cftsecnumwidth}{\LARGE{10}}
+		\settowidth{\cftsubsecnumwidth}{\LARGE{10.9}}
+		\settowidth{\cftsubsubsecnumwidth}{\LARGE{10.9.9}}
+	}{}
+	\ifthenelse{\equal{\DocType}{report}}{
+		\setlength{\cftsecindent}{1cm}
+		\setlength{\cftsubsecindent}{2.\cftsubsecindent}
+		\settowidth{\cftsecnumwidth}{\LARGE{10.9}}
+		\settowidth{\cftsubsecnumwidth}{\LARGE{10.9.9}}
+		\settowidth{\cftsubsubsecnumwidth}{\LARGE{10.9.9.a}}
+		\settowidth{\cftchapnumwidth}{\LARGE{10}}
+	}{}
+
+	\AddToShipoutPicture*{\BackgroundPic}
+	\AddToShipoutPicture*{\TraitAubergine}
+	%\AddToShipoutPicture*{\Trombone{ {\color{jaunefonc}\huge\bf\sf\type}}{{\color{bleucl}\Large {\numero}}} }
+	\AddToShipoutPicture*{\Trombone{{\color{jaunefonc}\huge\textbf{\textsf{\type}}}}{{\color{bleucl}\Large {\numero}}}}
+
+	\renewcommand{\footrulewidth}{0pt}
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyfootoffset[L,R]{0.8cm}
+	\fancyhead[EL,OL,ER,OR]{}
+	\fancyfoot[C]{}
+	\fancyfoot[L]{
+		\vspace{5.5mm}
+		{\color{orangefonc}\large{\type}}
+		\hspace{2mm}
+		\color{griscl}{
+			\rule[-0.3em]{1pt}{1.3em}
+			\hspace{1.3mm}
+			\numero
+		}
+		\vspace{-2mm}
+	}
+	\fancyfoot[R]{\vspace{1mm}\includegraphics[height=1cm]{logo}}
+
+	\hspace{-\parindent}
+	\parbox[b]{65.8mm}{
+		{\normalsize\color{gris}\auteur}
+		\vspace{-.5mm}\\
+		{\normalsize\color{gris}\sf\spacedallcaps\direction}
+		\vspace{-1.5mm}\\
+		{\tiny\color{gris}\sf\spacedallcaps\service}\vspace{-1.5mm}\\
+		{\renewcommand{\baselinestretch}{0.3}\tiny\color{gris}\sf\spacedallcaps\uet}\\
+		{\tiny\color{gris}\sf\spacedallcaps \adresse}\vspace{-1.5mm}\\
+		{\tiny\color{gris}\sf\spacedallcaps \villecp}\vspace{-1.5mm}\\
+		{
+			\scriptsize\color{gris} \carre{T}\hspace{1mm}\telephone
+			\vspace{-1mm}\\
+			\carre{@}\hspace{1mm}\href{mailto:\email?Subject=Note\%20\numero}{\email}
+		}
+	}
+	\vfill
+	{\raggedleft {\color{gris}\Lieu, le \today}\\}
+	\vfill\vfill\vfill\vfill\vfill
+	\newlength{\largeurtitre}
+	\settowidth{\largeurtitre}{\LARGE \bf \sf \type\ \numero}
+	\newlength{\demilargeurrestante}
+	\setlength{\demilargeurrestante}{-.5\largeurtitre}
+	\addtolength{\demilargeurrestante}{.5\textwidth}
+
+	\begin{center}
+		{\LARGE \vspace{\baselineskip}}
+		{\vspace{4pt}}
+	\end{center}
+	\vfill
+	\newlength{\largeurpouraction}
+	\newlength{\largeurrestante}
+	\newlength{\largeurrestantegauche}
+	\newlength{\largeurpourinfo}
+	\newlength{\largeurrestantedroite}
+	\settowidth{\largeurpouraction}{\sf{\scriptsize POUR ACTION}\hspace{2mm}\color{orangefonc}{\rule[-0.3em]{1pt}{1.25em}}\hspace{2mm}}
+	\setlength{\largeurrestante}{-\largeurpouraction}
+	\addtolength{\largeurrestante}{\textwidth}
+	\setlength{\largeurrestantegauche}{-\largeurpouraction}
+	\addtolength{\largeurrestantegauche}{-.5\columnsep}
+	\addtolength{\largeurrestantegauche}{.5\textwidth}
+	\settowidth{\largeurpourinfo}{\sf{\scriptsize POUR INFO}\hspace{2mm}\color{orangefonc}{\rule[-0.3em]{1pt}{1.25em}}\hspace{2mm}}
+	\setlength{\largeurrestantedroite}{-\largeurpourinfo}
+	\addtolength{\largeurrestantedroite}{-.5\columnsep}
+	\addtolength{\largeurrestantedroite}{.5\textwidth}
+	\begin{tabular}{@{}r@{\hspace{2mm}}>{\raggedright}p{\largeurrestantegauche}@{\hspace{10mm}}r@{\hspace{2mm}}>{\raggedright}p{\largeurrestantedroite}@{}}
+		\ifthenelse{\equal{\AffTheme}{true}}{
+			{{\color{orangefonc}{\sf{\scriptsize THÈME}\hspace{2mm}\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}} &  \multicolumn{3}{@{}p{\largeurrestante}@{}}{{\color{orangefonc}\vspace{-1\baselineskip}\bf \theme}}  \vspace{2mm}
+		}{}
+		\tabularnewline
+		\ifthenelse{\equal{\AffObjectif}{true}}{
+			{{\color{orangefonc}{\sf{\scriptsize OBJECTIF}\hspace{2mm}\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}} & \multicolumn{3}{@{}p{\largeurrestante}@{}}{\color{gris}\vspace{-1\baselineskip}\bf \objectif } \vspace{2mm}
+		}{}
+		\tabularnewline
+		\ifthenelse{\equal{\AffAttente}{true}}{
+			{{\color{orangefonc}{\sf{\scriptsize ATTENTE}\hspace{2mm}\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}} & \multicolumn{3}{@{}p{\largeurrestante}@{}}{\color{gris}\vspace{-1\baselineskip}\bf \attente } \vspace{2mm}
+		}{}
+		\tabularnewline
+		\ifthenelse{\equal{\AffAction}{true}}{
+			{{\color{orangefonc}{\sf{\scriptsize POUR ACTION}\hspace{2mm}\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}} &
+    		{\color{gris}\vspace{-1\baselineskip}\destinataires} \vspace{2mm}
+    	}{} &
+    	\ifthenelse{\equal{\AffInfo}{true}}{
+    		{{\color{orangefonc}{\sf{\scriptsize POUR INFO}\hspace{2mm}\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}} &
+    		{\color{gris}\vspace{-1\baselineskip}\copie } \vspace{2mm}
+    	}{}
+    	\tabularnewline
+    	\ifthenelse{\equal{\WithPartner}{true}}{
+    		{{\color{orangefonc}{\sf{\scriptsize PARTENAIRES}\hspace{2mm}\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}} &
+    		{\color{gris}\vspace{-1\baselineskip}\PartNames } \vspace{2mm}
+    	}{} &
+    	\ifthenelse{\equal{\WithPartner}{true}}{
+    		{{\color{orangefonc}{\sf{\scriptsize }\hspace{2mm}\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}}}} &
+    		{\color{gris}\vspace{-1\baselineskip}\includegraphics[height=\pnumber\baselineskip]{\plogo} } \vspace{2mm}
+    	}{}
+    	\tabularnewline
+    \end{tabular}
+    \vfill\vfill
+}%fin maketitle
+
+\newlength{\longueurresume}
+\settowidth{\longueurresume}{\color{griscl}{\sf{\scriptsize RÉSUMÉ / CONCLUSIONS}}}
+
+\newcommand{\resumeconclusions}{
+\ifthenelse{\equal{\AffResume}{true}}{
+{{\color{orangefonc}{\sf{\scriptsize RÉSUMÉ / CONCLUSIONS}
+\hspace{2mm}\color{griscl}{\rule[-0.3em]{1pt}{1.25em}}
+}}}\ifthenelse{\equal{\DocType}{article}}{\addcontentsline{toc}{section}{Résumé / conclusions}}{}
+\ifthenelse{\equal{\DocType}{report}}{\addcontentsline{toc}{chapter}{Résumé / conclusions}}{}
+\newline
+}{}
+}
+
+
+\newcommand{\mentionslegales}{
+\vfill\vfill\vfill
+
+{%\tiny meta mentions lï¿œgales ï¿œtrouver etc\dots
+\newpage}
+\fancyfoot[R]{}
+\fancyfoot[L]{}
+\cleardoublepage
+\fancyfoot[EL]{
+\vspace{5.5mm}{\color{orangefonc}\large{\thepage}}
+\hspace{2mm}
+\color{griscl}{\rule[-0.3em]{1pt}{1.3em}
+\hspace{1mm}
+\type \hspace{1mm} \numero}\vspace{-2mm}
+}
+
+\fancyfoot[ER]{}
+
+\fancyfoot[OR]{
+{\color{griscl}\type \hspace{1mm} \numero\vspace{-2mm}
+\hspace{1mm}
+\rule[-0.3em]{1pt}{1.3em}}
+\hspace{2mm}
+\vspace{5.5mm}{\color{orangefonc}\large{\thepage}}
+}
+\fancyfoot[OL]{}
+\setcounter{page}{1}
+
+}
