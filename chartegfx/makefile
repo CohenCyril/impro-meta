@@ -1,10 +1,23 @@
-#Makefile de compilation de fichier tex
-NOMTEX  =   $(shell egrep -l '^[^%]*\\documentclass' *.tex)
-NOM 	=   $(patsubst %.tex,%, $(NOMTEX))
-include LaTeX.mk
-all: $(NOM).pdf
-$(NOM).pdf: $(NOM).ps
-	ps2pdf $(NOM).ps
+all: ri.pdf statuts.pdf pa.pdf odjAG.pdf
 
-test:
-	@echo $(NOM)
+ri.pdf: ri.tex ../ri/mainri.tex statuts.pdf
+	xelatex ri.tex
+	xelatex ri.tex
+        
+pa.pdf: pa.tex ../pa/mainpa.tex statuts.pdf ri.pdf
+	xelatex pa.tex
+	xelatex pa.tex
+
+odjAG.pdf: odjAG.tex ../AG/mainodjAG.tex statuts.pdf
+	xelatex odjAG.tex
+	xelatex odjAG.tex
+
+statuts.pdf: statuts.tex ../statuts/mainstat.tex
+	xelatex statuts.tex
+	xelatex statuts.tex
+
+clean:
+	rm *.aux
+	rm *.mtc*
+	rm *.toc
+	rm *.log
