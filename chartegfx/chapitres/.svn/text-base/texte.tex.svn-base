@@ -1,7 +1,0 @@
-\newpage
-\chapter{Utilisation du fichier de style SNCF}
-\input{chapitres/chapitre1.tex}
-\chapter{Tests divers}
-\input{chapitres/chapitre2.tex}
-\chapter{Tests divers bis}
-\input{chapitres/chapitre2.tex}

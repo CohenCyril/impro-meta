@@ -1,6 +1,0 @@
-%\chapter{Testeminitoc}
-\minitoc
-\section{Est-ce que les figures marchent ?}
-\input{chapitres/chapitre2/section1.tex}
-\section{Et en changeant de section ?}
-\input{chapitres/chapitre2/section2.tex}
