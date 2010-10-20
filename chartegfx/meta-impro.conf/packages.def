@@ -15,8 +15,8 @@
 %\RequirePackage{movie15}
 \RequirePackage{booktabs} % Meilleures lignes dans les tableaux
 \RequirePackage{xspace} % Bonne gestion des espaces aprï¿œs les macros (commande \xspace)
-\RequirePackage{amsmath} % Composition des formules mathï¿œmatiques
-\RequirePackage{algorithm,algorithmic} %ï¿œcriture d'algorithmes ou de pseudo code
+%\RequirePackage{amsmath} % Composition des formules mathï¿œmatiques
+%\RequirePackage{algorithm,algorithmic} %ï¿œcriture d'algorithmes ou de pseudo code
 \RequirePackage{marvosym} % Syboles
 \RequirePackage[euler-digits]{eulervm} % Police Euler pour les formules
 

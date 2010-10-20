@@ -7,23 +7,22 @@
 \usepackage{marvosym} %pour l'¤
 \usepackage{url} 
 \usepackage{color} 
-\usepackage{shadow}
 \usepackage{eurosym} 
+\usepackage{shadow}
 \usepackage{fancyhdr} 
 \usepackage{fancybox}
-\usepackage{xr}
-\externaldocument[statuts-]{../statuts/main}
-
 \usepackage[colorlinks=true,urlcolor=black,linkcolor=black,pdfauthor={Association
-  META},pdftitle={Règlement intérieur de l'assocation
-  META},pdfsubject={Association META : Improvisation Théatrâle, Basée
-  à Paris},pdfkeywords={META, improvisation, impro, théatre,
+  META},pdftitle={Statuts de l'association
+  META},pdfsubject={Association META : Improvisation Théâtrale, Basée
+  à Paris},pdfkeywords={META, improvisation, impro, théâtre,
   spectacle, paris, association loi 1901, statuts }]{hyperref}
+\usepackage{fancyheadings}
+\pagestyle{fancyplain}
 
+\input{../macros.tex}
 
 \renewcommand{\headrulewidth}{0.4pt} %Trait haut
 \renewcommand{\footrulewidth}{0pt} %Trait bas
-
 \newcommand{\article}[1]{\subsection{#1}\addtocounter{article}{1}}
 \newcounter{article}
 \def\thesection       {\Roman{section}}
@@ -37,33 +36,21 @@
 \def\section@cntformat{Titre \thesection\quad}
 \def\subsection@cntformat{Article \thesubsection\quad}
 \makeatother
-
-\input{../macros.tex}
-
 \newcommand{\artref}[1]{article \ref{#1}}
-\newcommand{\artrefst}[1]{article \ref{statuts-#1} des \statuts{}}
+\title{Directives artistiques de \meta{}}
 
 
-\title{Règlement intérieur de l'association \metae{}}
+
+
 
 \begin{document}
 
-\date{}
+\date{2010 - 2011}
 
 \maketitle 
 \pagestyle{fancy} 
 
-\lhead{\textit{Règlement intérieur de l'association \meta{}}}
+\lhead{\textit{Directives artistiques pour \meta{}}}
 
-%Haut gauche \chead{} 
-%Haut centre \rhead{\thepage} 
-%Haut droite
-\rhead{\thepage} 
-%Bas gauche 
-\cfoot{} 
-%Bas centre \rfoot{} 
-%Bas droite \lfoot{}
-
-\input{abstract_ri.tex}
-\input{mainri.tex}
+\input{mainpa.tex}
 \end{document}
