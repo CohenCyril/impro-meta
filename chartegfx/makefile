@@ -17,7 +17,10 @@ statuts.pdf: statuts.tex ../statuts/mainstat.tex
 	xelatex statuts.tex
 
 clean:
-	rm *.aux
-	rm *.mtc*
-	rm *.toc
-	rm *.log
+	rm -f *.aux
+	rm -f *.mtc*
+	rm -f *.toc
+	rm -f *.log
+	rm -f *.out
+	rm -f *.maf
+        
